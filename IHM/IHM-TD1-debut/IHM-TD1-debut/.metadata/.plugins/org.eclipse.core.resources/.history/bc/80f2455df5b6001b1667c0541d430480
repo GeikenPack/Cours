@@ -1,0 +1,33 @@
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class FrameTest extends JFrame
+{
+	public FrameTest()
+	{
+		super("Test");
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLayout(new BorderLayout());
+		this.setSize(260, 120);
+		
+		JPanel pan1, pan2;
+		pan1 = new JPanel();
+		pan2 = new JPanel();
+		JButton but1, but2, but3;
+		but1 = new JButton("+");
+		but2 = new JButton("RAZ");
+		but3 = new JButton("-");
+		JTextField zone = new JTextField(10);
+		
+		pan1.add(zone);
+		pan2.add(but1);
+		pan2.add(but2);
+		pan2.add(but3);
+		this.add(pan1, BorderLayout.CENTER);
+		this.add(pan2, BorderLayout.SOUTH);
+	}
+}

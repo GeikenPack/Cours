@@ -1,0 +1,28 @@
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		FrameTest frame = new FrameTest();
+		JPanel pan1, pan2;
+		pan1 = new JPanel();
+		pan2 = new JPanel();
+		JButton but1, but2, but3;
+		but1 = new JButton("+");
+		but2 = new JButton("RAZ");
+		but3 = new JButton("-");
+		JTextField zone = new JTextField(10);
+		
+		pan1.add(zone);
+		pan2.add(but1);
+		pan2.add(but2);
+		pan2.add(but3);
+		
+		frame.add(pan1);
+		frame.add(pan2);
+		frame.setVisible(true);
+	}
+}

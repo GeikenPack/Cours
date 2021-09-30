@@ -1,0 +1,42 @@
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class FrameTest extends JFrame
+{
+	public FrameTest()
+	{
+		//Définition de la fenetre
+		super("Test");
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLayout(new BorderLayout());
+		this.setSize(260, 120);
+		
+		//Création des panels
+		JPanel pan;
+		pan = new JPanel();
+		pan.setLayout(new GridLayout(1, 3));
+		
+		//Création des bouttons
+		JButton but1, but2, but3;
+		but1 = new JButton("+");
+		but2 = new JButton("RAZ");
+		but3 = new JButton("-");
+		
+		//Création de la zone de texte
+		JTextField zone = new JTextField(10);
+		
+		//Ajout des éléments aux panels
+		pan.add(but1);
+		pan.add(but2);
+		pan.add(but3);
+		
+		//Ajout des pannels a la fenetre
+		this.add(zone, BorderLayout.CENTER);
+		this.add(pan, BorderLayout.SOUTH);
+	}
+}

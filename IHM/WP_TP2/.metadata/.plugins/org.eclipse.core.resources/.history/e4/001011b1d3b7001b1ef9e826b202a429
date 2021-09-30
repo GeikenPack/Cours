@@ -1,0 +1,11 @@
+package gestclub.ihm;
+
+public class Main3 
+{
+	public static void main(String[] args) 
+	{
+		FrameListeMembres frame = new FrameListeMembres();
+		frame.setVisible(true);
+	}
+
+}

@@ -1,0 +1,36 @@
+import javax.swing.*;
+
+public class FrameBonus extends JFrame
+{
+	public FrameBonus()
+	{
+		//Paramétrage de la fenetre
+		super("Fiche de contact");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(getPreferredSize());
+		
+		//Déclarations des composants
+		JLabel labTitre, labNom, labPrenom, labAdresse, labNotes;
+		JTextField textNom, textPrenom, textAdresse1, textAdresse2, textAdresse3;
+		JList liTitre;
+		
+		//Initialisations des labels
+		labTitre = new JLabel("Titre :");
+		labNom = new JLabel("Nom :");
+		labPrenom = new JLabel("Prenom :");
+		labAdresse = new JLabel("Adresse :");
+		
+		//Initialisation des zones de texte
+		textNom = new JTextField();
+		textPrenom = new JTextField();
+		textAdresse1 = new JTextField();
+		textAdresse2 = new JTextField();
+		textAdresse3 = new JTextField();
+		
+		//Initialisation de la liste
+		String[] data = {"Mr", "Mme"};
+		liTitre = new JList(data);
+		
+		this.add(liTitre);
+	}
+}

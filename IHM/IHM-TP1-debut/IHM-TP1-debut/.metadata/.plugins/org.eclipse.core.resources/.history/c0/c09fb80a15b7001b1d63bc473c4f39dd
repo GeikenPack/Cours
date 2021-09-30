@@ -1,0 +1,5 @@
+package gestclub.donnees;
+
+public class Membre {
+
+}

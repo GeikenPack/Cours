@@ -1,0 +1,11 @@
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		FrameBonus frame = new FrameBonus();
+
+		frame.setVisible(true);
+		System.out.println("Test");
+	}
+}

@@ -1,0 +1,109 @@
+package gestclub.ihm;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+import gestclub.donnees.Sports;
+
+public class FrameSaisieMembre extends JFrame
+{
+	public FrameSaisieMembre()
+	{
+		//Construction de la fenetre
+		super("Saisie membres");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JPanel contentPane = new JPanel();
+		contentPane.setLayout(new BorderLayout());;
+		this.setContentPane(contentPane);
+		
+		//Déclaration des variables
+		JPanel grandCentre, grandEst, grandSud;
+		JPanel petitNord, petitCentre, petitSud;
+		JButton butOk, butAnnul;
+		JLabel labNom, labPrenom, labAdresse, labSexe;
+		JTextField textNom, textPrenom;
+		JTextArea areaAdresse;
+		JRadioButton radH, radF;
+		ButtonGroup radGr;
+		
+		//Initialisation des variables
+		grandCentre = new JPanel();
+		grandCentre.setLayout(new BorderLayout());
+		petitNord = new JPanel();
+		petitNord.setLayout(new GridLayout(5, 1));
+		petitSud = new JPanel();
+		petitSud.setLayout(new FlowLayout());
+		petitCentre = new JPanel();
+		
+		grandEst = new JPanel();
+		grandEst.setLayout(new GridLayout(Sports.NOMBRE, 1));
+		
+		grandSud = new JPanel();
+		grandSud.setLayout(new FlowLayout());
+		
+		butOk = new JButton("OK");
+		butAnnul = new JButton("Annuler");
+		butOk.setSize(butAnnul.getPreferredSize());
+		
+		labNom = new JLabel("Nom");
+		labPrenom = new JLabel("Prenom");
+		labAdresse = new JLabel("Adresse");
+		labSexe = new JLabel("Sexe :");
+		
+		textNom = new JTextField();
+		textPrenom = new JTextField();
+		
+		areaAdresse = new JTextArea();
+		
+		radH = new JRadioButton("Homme");
+		radF = new JRadioButton("Femme");
+		radGr = new ButtonGroup();
+		radGr.add(radH);
+		radGr.add(radF);
+		
+		//Ajout des éléments aux pannels
+		grandSud.add(butOk);
+		grandSud.add(butAnnul);
+		
+		petitNord.add(labNom);
+		petitNord.add(textNom);
+		petitNord.add(labPrenom);
+		petitNord.add(textPrenom);
+		petitNord.add(labAdresse);
+		
+		petitCentre.add(areaAdresse);
+		
+		petitSud.add(labSexe);
+		petitSud.add(radH);
+		petitSud.add(radF);
+		
+		for (int i = 0; i < Sports.NOMBRE; i++)
+		{
+			grandEst.add(new JCheckBox(Sports.values()[i].toString()));
+		}
+		
+		//Ajout des pannels intermediaire
+		grandCentre.add(petitNord, BorderLayout.NORTH);
+		grandCentre.add(petitCentre, BorderLayout.CENTER);
+		grandCentre.add(petitSud, BorderLayout.SOUTH);
+		
+		//Ajout des panels a la fenetre
+		this.add(grandSud, BorderLayout.SOUTH);
+		this.add(grandEst, BorderLayout.EAST);
+		this.add(grandCentre, BorderLayout.CENTER);
+		
+		this.pack();
+	}
+}
