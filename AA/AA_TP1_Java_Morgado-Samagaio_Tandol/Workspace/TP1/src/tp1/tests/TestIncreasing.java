@@ -1,0 +1,51 @@
+package tp1.tests;
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.junit.Test;
+
+import tp1.StrLen;
+
+public class TestIncreasing {
+
+	@Test
+	public void testCore() {
+		List<String> input = Arrays.asList("AA", "B", "CCC", "DDDDD", "EEEEEE", "FFFF");
+		List<String> res = StrLen.increasingLength(input);
+		List<String> expected = Arrays.asList("B", "AA", "CCC", "FFFF", "DDDDD", "EEEEEE");
+		assertEquals(expected, res);
+	}
+
+	/**
+	 * Tests that the original list was NOT modified.
+	 */
+	@Test
+	public void testInputUnchanged() {
+		List<String> input = Arrays.asList("12", "1", "123", "12345", "123456", "1234");
+		input = new LinkedList<String>(input); // allow input to be modified
+		List<String> copy = new LinkedList<String>(input);
+		@SuppressWarnings("unused")
+		List<String> res = StrLen.increasingLength(input);
+		assertEquals("input list is unchanged", copy, input);
+	}
+
+	@Test
+	public void testMultiple() {
+		List<String> input = Arrays.asList("12", "1", "123", "123", "12", "1");
+		List<String> res = StrLen.increasingLength(input);
+		List<String> expected = Arrays.asList("1", "1", "12", "12", "123", "123");
+		assertEquals(expected, res);
+	}
+
+	@Test
+	public void testStable() {
+		List<String> input = Arrays.asList("aaa", "ccc", "bbb");
+		List<String> res = StrLen.increasingLength(input);
+		List<String> expected = Arrays.asList("aaa", "ccc", "bbb");
+		assertEquals(expected, res);
+	}
+}

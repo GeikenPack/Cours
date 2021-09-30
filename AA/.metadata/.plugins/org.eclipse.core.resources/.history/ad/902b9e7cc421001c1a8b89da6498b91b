@@ -1,0 +1,37 @@
+package translator;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class EngToFrench {
+	
+	protected Map<String, Word> dict;
+	
+	public void register(String english, String french, Nature nature) {
+		dict.put(english, new Word(french, nature));
+	}
+	
+	public void register(String english, String french) {
+		dict.put(english, new Word(french));
+	}
+	
+	public EngToFrench() {
+		dict = new TreeMap<String, Word>();
+		register("I", "je");
+		register("you", "tu");
+		register("am", "suis");
+		register("love", "aimer", Nature.VERB);
+	}
+
+	public List<String> translate(List<String> sentence) {
+		// TODO: project
+		List<Word> l = new ArrayList<Word>();
+		for (String e : sentence)
+		{
+			l.add(dict.get(e));
+		}
+		return l;
+	}
+}
