@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Mention
+comment1.params=pfBorneInf\ pfBorneSup
+comment1.target=double\ saisieC(double,\ double)
+comment2.params=
+comment2.target=void\ calcul()
+numComments=3

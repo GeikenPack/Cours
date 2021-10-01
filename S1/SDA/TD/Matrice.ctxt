@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Matrice
+comment1.params=pfNbCols\ pfNbLignes
+comment1.target=Matrice(int,\ int)
+comment10.params=val
+comment10.target=void\ setPremiereDiagonale(int)
+comment11.params=val
+comment11.target=void\ setDeuxiemeDiagonale(int)
+comment12.params=val
+comment12.target=Matrice\ mulMatNombre(int)
+comment2.params=
+comment2.target=int\ getNbLignes()
+comment3.params=
+comment3.target=int\ getNbColonnes()
+comment4.params=i\ j
+comment4.target=int\ getElement(int,\ int)
+comment5.params=i
+comment5.target=int\ somLigne(int)
+comment6.params=j
+comment6.target=int\ somColonne(int)
+comment7.params=
+comment7.target=boolean\ estCarree()
+comment8.params=
+comment8.target=boolean\ estDiagonal()
+comment9.params=i\ j\ val
+comment9.target=void\ setElement(int,\ int,\ int)
+numComments=13

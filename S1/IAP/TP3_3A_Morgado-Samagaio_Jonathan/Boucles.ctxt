@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Boucles
+comment0.text=\r\n\ Indiquer\ le\ ou\ les\ numeros\ de\ TP\ et\ d'exercice.\r\n\r\n\ @author\ (votre\ nom)\r\n
+comment1.params=
+comment1.target=void\ points()
+comment2.params=
+comment2.target=void\ boum()
+comment3.params=
+comment3.target=void\ boumPair()
+comment4.params=
+comment4.target=void\ stringConcat()
+comment5.params=
+comment5.target=void\ boumPropre()
+numComments=6

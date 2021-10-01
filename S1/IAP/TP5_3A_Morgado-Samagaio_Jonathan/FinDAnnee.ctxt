@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=FinDAnnee
+comment1.params=
+comment1.target=int\ saisieEntier()
+comment2.params=annee
+comment2.target=boolean\ estBissextile(int)
+comment3.params=mois\ annee
+comment3.target=int\ nbJours(int,\ int)
+comment3.text=\r\n\ \ D\u00E9termine\ le\ nombre\ de\ jours\ dans\ un\ mois\ d'une\ ann\u00E9e\ donn\u00E9e\r\n\ \ @param\ mois\r\n\ \ \ \ \ \ mois\r\n\ \ @param\ ann\u00E9e\r\n\ \ \ \ \ \ ann\u00E9e\r\n\ \ @return\ le\ nombre\ de\ jours\ dans\ le\ mois\r\n
+comment4.params=jour\ mois\ annee
+comment4.target=boolean\ estValide(int,\ int,\ int)
+comment5.params=mois
+comment5.target=java.lang.String\ nomMois(int)
+comment6.params=
+comment6.target=void\ joursFinAnnee()
+comment7.params=
+comment7.target=void\ saisieControleeI()
+comment8.params=description\ min\ max\ essais
+comment8.target=int\ saisieControlee(java.lang.String,\ int,\ int,\ int)
+numComments=9

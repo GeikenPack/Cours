@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Mystere
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ Mystere\ ici.\r\n\r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=
+comment1.target=Mystere()
+comment2.params=pfValeurInitialeChaine
+comment2.target=Mystere(java.lang.String)
+comment3.params=pfValeurInitialeEntier
+comment3.target=Mystere(int)
+comment4.params=pfValeurInitialeChaine\ pfValeurInitialeEntier
+comment4.target=Mystere(java.lang.String,\ int)
+numComments=5

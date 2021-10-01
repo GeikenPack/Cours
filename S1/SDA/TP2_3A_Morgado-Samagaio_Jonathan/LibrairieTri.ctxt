@@ -1,0 +1,33 @@
+#BlueJ class context
+comment0.target=LibrairieTri
+comment1.params=
+comment1.target=double\ saisieReel()
+comment1.text=\r\n\ Lit\ au\ clavier\ un\ r\u00E9el\ et\ le\ retourne\r\n\ \r\n\ @return\ r\u00E9el\ saisie\ par\ l'utilisateur\r\n
+comment10.params=pfTab
+comment10.target=void\ triPairImpair(TNP)
+comment11.params=
+comment11.target=void\ principale()
+comment2.params=
+comment2.target=TNP\ creerTNPTest()
+comment3.params=pfNbElements\ pfTabR
+comment3.target=void\ saisieTableau(int,\ TNP)
+comment3.text=\r\n\ \ Lit\ au\ clavier\ pfNbElements\ r\u00E9els\ et\ les\ place\ dans\ le\ TNP\ pfTabR\r\n\r\n\ @param\ pfNbElements\ IN\ \:\ le\ nombre\ de\ valeurs\ \u00E0\ faire\ saisir\ \u00E0\ l'utilisateur\r\n\ @param\ pfTabR\ OUT\ \:\ le\ tableau\ des\ valeurs\ r\u00E9elles\r\n\r\n\ Pr\u00E9conditions\ ?\r\n
+comment4.params=pfTabR
+comment4.target=void\ afficherTableau(TNP)
+comment4.text=\r\n\ \ Affiche\ \u00E0\ l'\u00E9cran\ les\ valeurs\ significatives\ du\ TNP\ pfTabR\r\n\r\n\ @param\ pfTabR\ IN\ \:\ le\ tableau\ non\ plein\r\n\r\n
+comment5.params=pfDeb\ pfFin\ pfTabR
+comment5.target=int\ maxST(int,\ int,\ TNP)
+comment5.text=\r\n\ \ permet\ de\ d\u00E9terminer\ le\ rang\ de\ la\ valeur\ maximum\ des\ \u00E9l\u00E9ments\ du\ tableau\r\n\ non\ plein\ de\ r\u00E9els\ pfTabR\ compris\ entre\ les\ indices\ pfDeb\ et\ pfFin\r\n\r\n\ @param\ pfTabR\ IN\ \:\ le\ tableau\ non\ plein\ des\ valeurs\ r\u00E9elles\r\n\ @param\ pfDeb\ IN\ \:\ indice\ de\ d\u00E9but\ de\ sous-tableau\r\n\ @param\ pfFin\ IN\ \:\ indice\ de\ fin\ de\ sous-tableau\r\n\r\n\ @return\ l\u2019indice\ du\ maximum\ dans\ le\ sous-tableau\ d\u00E9limit\u00E9\ par\ pfDeb\ et\ pfFin\ (compris)\r\n\r\n\ Pr\u00E9conditions\ \:\ 0\ <\=\ pfDeb\ <\=\ pfFin\ <\ pfTabR.nbElt\r\n
+comment6.params=pfTabR
+comment6.target=void\ triMax(TNP)
+comment6.text=\r\n\ Tri\ un\ tableau\ de\ r\u00E9el\ par\ le\ maximum\r\n\ \r\n@param\ pfTabR\ IN/OUT\ tableau\ non\ plein\ de\ r\u00E9el\r\n
+comment7.params=pfTabR\ pfNomFichier
+comment7.target=void\ sauverTableau(TNP,\ java.lang.String)
+comment7.text=\r\n\ Enregistre\ les\ pfNbElements\ r\u00E9els\ du\ tableau\ non\ plein\ pfTabR\ dans\ le\ fichier\r\n\ de\ nom\ pfNomFichier\r\n\r\n\ @param\ pfTabR\ IN\ \:\ un\ tableau\ non\ plein\ de\ valeurs\ r\u00E9elles\r\n\ @param\ pfNomFichier\ IN\ \:\ le\ nom\ du\ fichier\ cible\r\n\r\n
+comment8.params=pfTabR\ pfNbElements\ pfNomFichier
+comment8.target=void\ chargerTableau(TNP,\ int,\ java.lang.String)
+comment8.text=\r\n\ Lit\ pfNbElements\ r\u00E9els\ dans\ le\ fichier\ de\ nom\ pfNomFichier\ et\ les\ place\r\n\ dans\ le\ tableau\ non\ plein\ pfTabR\r\n\r\n\ @param\ pfTabR\ OUT\ \:\ un\ tableau\ non\ plein\ de\ valeurs\ r\u00E9elles\r\n\ @param\ pfNbElements\ IN\ \:\ le\ nombre\ de\ valeurs\r\n\ @param\ pfNomFichier\ IN\ \:\ le\ nom\ du\ fichier\ cible\r\n\r\n\ Pr\u00E9conditions\ \:\ Fichier\ d\u00E9j\u00E0\ existant\r\n
+comment9.params=pfTab\ pair\ impair
+comment9.target=void\ chercherPairImpair(TNP,\ TNP,\ TNP)
+comment9.text=\r\n\ Met\ les\ valeurs\ pair\ et\ impaire\ d'un\ tableau\ pfTab\ dans\ les\ tableau\ respectif\ pair\ et\ impair\r\n\ \r\n\ @param\ IN\ pfTab\ \:\ tableau\ de\ r\u00E9el\ \r\n\ @param\ OUT\ pair\ \:\ tableau\ des\ nombres\ pair\r\n\ @param\ OUT\ impair\ \:\ tableau\ des\ nombres\ impair\r\n
+numComments=12

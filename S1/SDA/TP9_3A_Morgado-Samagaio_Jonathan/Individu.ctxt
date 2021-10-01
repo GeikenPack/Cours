@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Individu
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ Individu\ ici.\r\n\r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=pfNom
+comment1.target=Individu(java.lang.String)
+comment2.params=pfNom\ pfp1\ pfp2
+comment2.target=Individu(java.lang.String,\ Individu,\ Individu)
+numComments=3

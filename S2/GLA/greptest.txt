@@ -1,0 +1,90 @@
+=== grep généralités
+
+chaine
+achaineb
+buuuuuuuuuuuuuuuut
+but chaine
+bt chaine
+
+=== grep langage
+
+a
+b
+c
+aa
+ab
+ac
+ba
+bb
+bc
+ca
+cb
+cc
+aba
+ababa
+aabcbcbcc
+aabcbaba abbcccab aabbbbaba
+abbabc  bbababbba
+abbbbabbccc
+aaaabcbbcbaaaabcbcbabc
+abcbabbcbbccaabcbcba
+abcbabcc
+abababcbacbbcbcbabbc
+aaaabcbbbcabbcba
+abcbabbc
+abcbbbcbcbbcbba
+aabbbabbaba aacb
+aababa abbcbcbba
+abababa acccccba
+abbabbbabababab
+aabbcbabbc  abbaba
+abbabbabbabbaaaabbabbabbaabbabb
+acbabbbcabbc aaabaab
+cbbcbbabaabbabbabcbbcbcba
+cbcbcaaacbabc
+abcbaaabacabbbbbbbbbbbbbbbbbbbbbbbbbbbbaaa
+ababbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaa
+aabccbababcbabcbbcbcbabbababc
+ababcbcca
+acbacbacbacbacbacbcbcbabbbbbc
+aacb
+acb
+bcb
+
+
+=== grep avancé code
+
+# commentaire
+# on importe la librairie
+import matplotlib.pyplot as plt
+# on appelle une fonction
+plt.nom
+###########
+## Suite
+##########
+plt.draw(X,Y)
+
+=== grep avancé mails
+
+toto@free.fr
+iut@free.fr
+remi.boulle@univ-tlse2.fr
+famille.michu@orange
+jean-pierre.tramo@leadarchtect.monnomdedomaine
+
+
+=== grep acancé texte français
+
+En 1931, alors que j'écrivais Le Meilleur des Mondes, j'étais convaincu que le temps ne pressait pas encore. La société intégralement organisée, le système scientifique des castes, l'abolition du libre arbitre par conditionnement méthodique,. la servitude rendue tolérable par des doses régulières de bonheur chimiquement provoqué, les dogmes orthodoxes enfoncés dans les cervelles pendant le -sommeil au moyen des cours de nuit, tout cela approchait; se réaliserait bien sûr, mais ni de mon vivant, ni même du vivant de mes petits-enfants. J'ai oublié la date. exacte des événements rapportés dans ma fable, mais c'était vers le sixième ou- septième siècle après F. (après Ford). Nous qui vivions dans le deuxième quart du vingtième siècle après J.-C., nous habitions un univers assez macabre certes, mais enfin le cauchemar de ces années de dépression était radicalement différent de celui, tout futur, décrit dans mon roman. Notre- monde était torturé par l'anarchie, le leur, au septième siècle après F., par un excès d'ordre. Le passage de cet extrême à l'autre demanderait du temps, beaucoup de temps à ce que je croyais, ce qui permettrait à un tiers privilégié de la race humaine de tirer le meilleur parti des deux systèmes : celui du libéralisme désordonné et celui du meilleur des mondes, beaucoup trop ordonné, dans lequel l'efficacité parfaite ne laissait place ni à la liberté ni à l'initiative personnelle.
+Vingt-sept ans plus tard, dans ce troisième quart du vingtième siècle après J-C. et bien longtemps avant la fin du premier siècle après F., je suis beaucoup moins optimiste que je l'étais en écrivant Le Meilleur des Mondes. Les prophéties faites en 1931 se réalisent bien plus tôt que je le pensais. L'intervalle béni entre trop de désordre et trop d'ordre n'a pas commencé et rien n'indique qu'il le fera jamais. En Occident, il est vrai, hommes et femmes jouissent encore dans une appréciable mesure de la liberté individuelle, mais même dans les pays qui ont une longue tradition de gouvernement démocratique cette liberté, voire le désir de la posséder, paraissent en déclin. Dans le reste du monde, elle a déjà disparu, ou elle est sur le point de le faire. Le cauchemar de l'organisation intégrale que j'avais situé dans le septième siècle après F. a surgi de lointains dont l'éloignement rassurait et nous guette maintenant au premier tournant.
+Le 1984 de George Orwell projetait dans l'avenir, en le grossissant, un présent qui contenait le stalinisme et un passé immédiat qui avait vu fleurir le nazisme. Le Meilleur des Mondes a été écrit avant l'accession de Hitler au pouvoir suprême en Allemagne et à un moment où le tyran russe n'avait pas encore trouvé sa cadence. En 1931, le terrorisme systématique ne revêtait pas le caractère obsédant de fait contemporain par excellence qu'il allait prendre en 1948 et la dictature future de mon univers imaginaire était notablement moins brutale que celle décrite avec tant de brio par Orwell. Dans l'ambiance de 1948, 1984 paraissait effroyablement convaincant. Mais après tout, les tyrans sont mortels et les circonstances changent. L'évolution récente en Russie, les derniers progrès dans les sciences et la technologie ont retiré une part de sa macabre vraisemblance au livre d'Orwell. Bien sûr, une guerre nucléaire rendrait dérisoires toutes les prédictions, mais si nous admettons pour le moment que les Grandes Puissances peuvent s'abstenir de nous anéantir, il semble maintenant que l'avenir a des chances de ressembler au Meilleur des Mondes plutôt qu'à 1984.
+A la lumière de ce que nous avons récemment appris sur le comportement animal en général et sur le comportement humain en particulier, il est devenu évident que le contrôle par répression des attitudes non conformes est moins efficace, au bout du compte, que le contrôle par renforcement des attitudes satisfaisantes au moyen de récompenses et que, dans l'ensemble, la terreur en tant que procédé de gouvernement rend moins bien que la manipulation non violente du milieu, des pensées et des sentiments de l'individu. Le châtiment fait provisoirement cesser le comportement incriminé, mais ne supprime pas de façon définitive la tendance de la victime à s'y complaire. De plus, les dérivés psychophysiques de la répression peuvent être tout aussi fâcheux que l'attitude pour laquelle un individu a été châtié. La psychothérapie est en grande partie consacrée au traitement des effets débilitants ou antisociaux de sanctions passées.
+La société décrite dans 1984 est dominée presque exclusivement par le châtiment et la crainte du châtiment. Dans l'univers imaginaire de ma propre fable, ce dernier est rare et en général peu rigoureux. Le contrôle presque parfait exercé par le gouvernement est réalisé au moyen du renforcement systématique des attitudes satisfaisantes, de nombreuses manipulations à peu près non violentes, à la fois physiques et psychologiques, et de la standardisation génétique. La gestation en éprouvette et le contrôle central de la reproduction ne sont peut-être pas choses impossibles, mais il n'en est pas moins évident que pendant longtemps encore nous resterons une espèce vivipare se reproduisant au hasard. Donc, la standardisation génétique peut être exclue du domaine pratique; les sociétés continueront à être régies par un contrôle postnatal par répression, comme dans le passé et, de plus en plus, par les méthodes si efficaces de la récompense et de la manipulation scientifique.
+En Russie, la dictature démodée, style 1984, de Staline a commencé à céder du terrain devant une forme de tyrannie plus moderne. Dans les hautes sphères de la société hiérarchisée soviétique, le renforcement du comportement satisfaisant remplace peu à peu les vieilles méthodes de contrôle par répression des attitudes non conformes. Ingénieurs et savants, professeurs et fonctionnaires sont largement rétribués pour le travail bien fait et imposés avec tant de modération qu'ils se trouvent constamment incités à faire mieux encore pour obtenir de nouvelles récompenses. Dans certains domaines, ils ont la permission de penser et de faire plus ou moins ce qu'ils veulent, la répression ne les guettant qu'au moment où ils sortent des limites prescrites pour s'aventurer dans les chasses gardées de l'idéologie et de la politique. C'est parce qu'on leur a accordé une certaine mesure de liberté professionnelle que les professeurs, les savants et les techniciens russes ont obtenu des succès si remarquables. Ceux qui vivent à la base de la pyramide soviétique ne jouissent d'aucun des privilèges accordés à la minorité des individus chanceux ou exceptionnellement doués. Leurs salaires sont maigres et ils paient, sous forme de prix élevés, une proportion exorbitante des impôts. Le domaine dans lequel ils peuvent faire ce qu'ils veulent est extrêmement réduit et leurs dirigeants les maîtrisent plus par la répression et la menace que par la manipulation non violente, ou le renforcement du comportement satisfaisant au moyen de récompenses. Le système soviétique allie des éléments de 1984 à d'autres qui préfigurent ce qui se passait parmi les castes élevées dans Le Meilleur des Mondes.
+Pendant ce temps, des forces impersonnelles sur lesquelles nous n'avons presque aucun contrôle semblent nous pousser tous dans la direction du cauchemar de mon anticipation et cette impulsion déshumanisée est sciemment accélérée par les représentants d'organisations commerciales et politiques qui ont mis au point nombre de nouvelles techniques pour manipuler, dans l'intérêt de quelque minorité, les pensées et les sentiments des masses. Ces procédés seront étudiés dans les chapitres suivants; bornons-nous pour le moment à ces forces impersonnelles qui sont en train de rendre le monde si peu sûr pour les démocraties, si peu hospitalier pour la liberté individuelle. Que sont-elles et pourquoi le cauchemar, que j'avais projeté dans le septième siècle après F., a-t-il avancé si vite vers nous? La réponse à ces questions doit commencer là où commence la vie de toute société, fût-elle la plus évoluée du monde - au niveau de la biologie.
+Le jour du premier Noël, la population de notre planète était d'environ 250 millions d'hommes - inférieure à la moitié de celle de la Chine moderne. Seize siècles plus tard, lorsque les pèlerins débarquèrent de la Mayflower à Plymouth Rock, elle avait un peu dépassé les 500 millions. Au moment où les colonies d'Amérique proclamaient leur indépendance, elle atteignait 700 millions. En 1931, alors que j'écrivais Le Meilleur des Mondes, elle était de peu inférieure à deux milliards. Aujourd'hui, vingt-sept ans après seulement, nous sommes 2 milliards 800 millions. Et demain? Pénicilline, D.D.T. et eau pure sont autant de pro- duits bon marché dont les effets sur la santé publique sont absolument hors de proportion avec leur coût. Même le plus pauvre des gouvernements est assez riche pour mettre entre les mains de ses sujets les moyens de limiter la mort. Quand il s'agit des naissances, c'est tout autre chose. Le contrôle des décès peut être mis à la portée de toute une population par quelques techniciens travaillant pour le compte d'un gouvernement bienveillant, mais celui des naissances dépend de la coopération d'un peuple entier. Il doit être pratiqué par d'innombrables individus dont il exige plus d'intelligence et de volonté que n'en possèdent la plupart des illettrés pullulant par le monde et (dans le cas où des procédés anticonceptionnels chimiques ou mécaniques sont employés) une dépense que le plus grand nombre d'entre eux ne peut faire. De plus, il n'existe nulle part la moindre tradition religieuse en faveur de la mort illimitée, alors que celles en faveur de la reproduction illimitée sont des plus répandues. Pour toutes ces raisons, la limitation de la mort est aisée à réaliser, celle des naissances, extrêmement difficile; aussi les taux de mortalité ont-ils baissé au cours des dernières années avec une saisissante rapidité, alors que ceux des naissances sont restés à leur ancien ni- veau (élevé) ou bien, s'ils ont baissé, le mouvement a été très peu marqué et très lent. En conséquence, la population du globe augmente à l'heure actuelle plus vite qu'elle l'a jamais fait à n'importe quel moment dans l'histoire de l'espèce.
+De plus, l'accroissement annuel lui-même s'accroît : régulièrement, selon la règle des intérêts composés et irrégulièrement aussi, à chaque application, par une société technologiquement retardataire, des principes de la Santé publique. A l'heure présente, cet excédent atteint 43 millions environ pour l'ensemble du globe, ce qui signifie que tous les quatre ans l'humanité ajoute à ses effectifs l'équivalent de la population actuelle des Etats-Unis - tous les huit ans et demi l'équivalent de la population actuelle des Indes. Au rythme d'accroissement existant entre la naissance du Christ et la mort de la reine Elizabeth Ire, il avait fallu seize siècles à la population de la terre pour doubler; au taux actuel, il lui faudra moins de cinquante ans. Et- ce redoublement fantastique se produira sur une planète dont les régions les plus productives sont déjà occupées par une population très dense, dont les sols sont épuisés par les efforts frénétiques de mauvais cultivateurs essayant de produire plus de nourriture, et dont le capital de minéraux aisément accessibles est dilapidé avec la prodigalité extravagante d'un matelot ivre paressé de se débarrasser de paies accumulées.
+Dans le Meilleur des Mondes de ma fable, le problème du rapport entre le nombre des humains et les ressources naturelles avait été résolu : un chiffre optimum ayant été calculé pour la population mondiale (un peu inférieur à deux milliards, si mes souvenirs sont exacts), il était maintenu, génération après génération. Dans le monde contemporain réel, rien n'a été fait. Au contraire, ce problème devient plus grave et plus redoutable avec chaque année qui passe et c'est dans ce sinistre décor biologique que se jouent tous les drames politiques, économiques, intellectuels et psychologiques de notre époque. A me- sure que le vingtième siècle approche de son terme, que de nouveaux milliards s'ajoutent aux milliards existants (nous dépasserons les cinq et demi quand ma petite-fille aura cinquante ans), ce décor biologique s'avance, toujours plus insistant, plus menaçant, vers le devant et le centre de la scène historique. Le problème du rapport entre un chiffre de population rapidement croissant et les ressources naturelles, la stabilité sociale, le bien-être de l'individu - ce problème est main- tenant le principal qui se pose à l'humanité et il le restera certainement pendant un siècle encore, peut-être plusieurs. Une nouvelle ère est censée avoir commencé le 4 octobre 1957, mais en réa- lité, dans l'état présent du monde, tout notre exubérant bavardage post-spoutnik est hors de propos, voire même absurde. En ce qui concerne les masses de l'humanité, l'âge qui vient ne sera pas celui de l'Espace cosmique, mais celui de la surpopulation.
+
+

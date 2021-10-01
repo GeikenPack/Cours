@@ -1,0 +1,33 @@
+body
+{
+  background-image: url("media/thunderstorm.jpg");
+  color: green;
+}
+h1
+{
+  text-align: center;
+}
+.bordure
+{
+  border-style: groove;
+  border-width: thin;
+  border-color: blue;
+  padding : 0.5%;
+  margin : 1%;
+}
+a:hover
+{
+  color: grey;
+}
+a:active
+{
+  color: teal;
+}
+a:visited
+{
+  color : pink;
+}
+.paraf
+{
+  color: beige;
+}

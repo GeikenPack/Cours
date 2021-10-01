@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Pile
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ Pile\ ici.\r\n\r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=
+comment1.target=Pile()
+comment2.params=pfTaille
+comment2.target=Pile(int)
+numComments=3

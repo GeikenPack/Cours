@@ -1,0 +1,32 @@
+Sub Que_fait_je()   ' début de la procédure
+
+Dim Commentaire As String  ' pour déclarer la variable (Dim) Commentaire comme chaîne de `caractères (String)
+Dim nb_aleat As Integer ' un nombre aléatoire généré par le système
+Dim nb_lu As Integer
+Dim score As Integer
+Dim compteur As Integer
+Dim VbOk As Boolean
+' Tester si l'utilisateur a cliqué sur le bouton OK
+VbOk = MsgBox("Bienvenue dans le programme de calcul mental", vbOKCancel)
+If VbOk Then
+ ' Si oui initialiser un générateur de nombres aléatoires
+
+nb_aleat = Int((100 * Rnd) + 1)    ' générer un nombre aléatoire entre 1 et 101
+Commentaire = ""
+InputBox("Le nombre à trouver est entre 1 et 100 " & " - Tentez votre chance : ")
+
+While nb_lu <> nb_aleat
+If nb_lu < nb_aleat Then
+    Commentaire = "Trop petit"
+ 
+    Else
+    Commentaire = "Trop grand"
+
+
+nb_lu = InputBox("Le nombre à trouver est entre 1 et 100 " & " - Tentez votre chance : " & Commentaire)
+' tant que ce nombre est différent de celui tapé par l'utilisateur,
+                    'boucler en incrémentant le compteur
+Wend
+MsgBox "Bravo ! Vous avez trouvé après " & compteur & " tentatives"
+End If
+End Sub

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=JeuDeLaVie
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ JeuDeLaVie\ ici.\r\n\r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=
+comment1.target=JeuDeLaVie()
+comment2.params=pfNbL\ pfNbC
+comment2.target=JeuDeLaVie(int,\ int)
+numComments=3

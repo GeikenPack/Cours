@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=ProgrammeJeuDeLaVie
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ ProgrammeJeuDeLaVie\ ici.\r\n\r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=pfNbL\ pfNbC
+comment1.target=JeuDeLaVie\ JeuDeLaVie(int,\ int)
+comment1.text=\r\n\ Cr\u00E9er\ un\ jeu\ de\ la\ vie\ avec\ pfNbL\ lignes\ et\ pfNbC\ colonnes\r\n\ \r\n\ @param\ pfNbL\ IN\:\ nombre\ de\ lignes\r\n\ @param\ pfNbC\ IN\:\ nombre\ de\ colonnes\r\n\ @return\ JeuDeLaVie\:\ Jeu\ de\ la\ vie\ creer\r\n\ @throws\ Exception\ si\ pfNbL\ <\=\ 0\ ou\ pfNbC\ <\=\ 0\r\n
+comment2.params=jeu\ pfL\ pfC
+comment2.target=boolean\ estVivant(JeuDeLaVie,\ int,\ int)
+comment2.text=\r\n\ Retourne\ l'etat\ de\ la\ case\ pfL,pfC\r\n\ \r\n\ @param\ jeu\ IN\ \:\ Jeu\ de\ la\ vie\ a\ utiliser\r\n\ @param\ pfL\ \:\ Ligne\ avec\ la\ case\ a\ verifier\r\n\ @param\ pfC\ IN\:\ Colonne\ avec\ la\ case\ a\ v\u00E9rifier\r\n\ @return\ boolean\ \:\ Etat\ de\ la\ case\r\n\ @throws\ Exception\ si\ ((jeu.nbL\ +\ 2)\ >\ i\ >\=\ 0\ )\ ET\ (\ (jeu.nbC\ +\ 2)\ >\ j\ >\=\ 0\ )\r\n
+comment3.params=jeu\ pfL\ pfC
+comment3.target=int\ getNbVoisinVivants(JeuDeLaVie,\ int,\ int)
+comment3.text=\r\n\ Retourne\ le\ nombre\ de\ voisin\ vivant\ d'une\ case\r\n\ \r\n\ @param\ jeu\ IN\ \:\ Jeu\ de\ la\ vie\ a\ parcourir\r\n\ @param\ pfL\ IN\ \:\ Ligne\ de\ l'\u00E9l\u00E9ment\ a\ v\u00E9rifier\r\n\ @param\ pfC\ IN\ \:\ Colonne\ de\ l'\u00E9l\u00E9ment\ a\ v\u00E9rifier\r\n\ @return\ entier\:\ Nombre\ de\ voisin\ vivants\r\n\ @throws\ Exception\ si\ (jeu.nbL\ >\=\ i\ >\ 0\ )\ ET\ (\ jeu.nbC\ >\=\ j\ >\ 0\ )\r\n
+comment4.params=jeu\ pfL\ pfC
+comment4.target=boolean\ seraVivante(JeuDeLaVie,\ int,\ int)
+comment4.text=\r\n\ Retourne\ l'etat\ d'une\ case\ pour\ la\ prochaine\ g\u00E9n\u00E9ration\r\n\ \r\n\ @param\ jeu\ IN\ \:\ jeu\ de\ la\ vie\ a\ parcourir\r\n\ @param\ pfL\ IN\ \:\ Ligne\ de\ l'\u00E9l\u00E9ment\ \u00E0\ v\u00E9rifier\r\n\ @param\ pfC\ IN\ \:\ Ligne\ de\ l'\u00E9l\u00E9ment\ \u00E0\ v\u00E9rifier\r\n\ @return\ boolean\:\ Etat\ de\ la\ case\ pour\ la\ prochaine\ g\u00E9n\u00E9ration\r\n\ @throws\ Exception\ si\ (\ jeu.nbL\ >\=\ i\ >\ 0\ )\ ET\ (\ jeu.nbC\ >\=\ j\ >\ 0\ )\r\n
+comment5.params=jeu
+comment5.target=void\ generationSuivante(JeuDeLaVie)
+comment5.text=\r\n\ Creer\ la\ g\u00E9n\u00E9ration\ suivante\r\n\ \r\n\ @param\ jeu\ IN/OUT\ \:\ Jeu\ de\ la\ vie\ a\ modifier\r\n
+comment6.params=jeu
+comment6.target=boolean\ grilleConnue(JeuDeLaVie)
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+numComments=8

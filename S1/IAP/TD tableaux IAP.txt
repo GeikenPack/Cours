@@ -1,0 +1,305 @@
+==================================
+/*
+Introduction aux tableaux
+*/
+
+//Algorithme somMoy
+DEBUT
+	AFFICHER "Saisissez le nombre de valeurs (entre 1 et 100)"
+	SAISIR nbVal
+	TANT QUE nbVal<1 OU nbVal>100 FAIRE
+		AFFICHER "Erreur, saisissez le nombre de valeurs(entre 1 et 100)"
+		SAISIR nbVal
+	FTQ
+	somme <- 0
+	POUR (INIT: i <- 0; TEST: i < nbVal; MAJ: i <- i + 1) FAIRE
+		AFFICHER "Saissisez la valeur" i+1
+		SAISIR tabVal[i]
+		somme <- somme + tabVal[i]
+	FPOUR
+	AFFICHER "La somme de toutes les valeurs est", somme
+	moyenne <- somme / nbVal
+	AFFICHER "La moyenne e vos valeurs est :", moyenne	
+FIN
+===================================
+//Algorithme moyennePos
+DEBUT 
+	AFFICHER "Saisissez le nombre de valeurs (entre 1 et 100)"
+	SAISIR nbVal
+	TANT QUE nbVal<1 OU nbVal>100 FAIRE
+		AFFICHER "Erreur, saisissez le nombre de valeurs(entre 1 et 100)"
+		SAISIR nbVal
+	FTQ
+	sommePos <- 0
+	nbPos <- 0
+	sommeNeg <- 0
+	nbNeg <- 0
+	POUR (INIT: i <- 0; TEST: i < nbVal; MAJ: i <- i + 1) FAIRE
+		AFFICHER "Saissisez la valeur" i+1
+		SAISIR tabVal[i]
+		SI tabVal[i] > 0 ALORS
+			sommePos <- sommePos + tabVal[i]
+			nbPos <- nbPos + 1
+		SINON
+			sommeNeg <- sommeNeg + tabVal[i]
+			nbNeg <- nbNeg + 1
+		FSI
+	FPOUR
+	AFFICHER "La somme des valeurs positives est", sommePos, "et la somme des valeurs négative est", sommeNeg
+	moyennePos <- sommePos / nbPos
+	moyenneNeg <- sommeNeg / nbNeg
+	AFFICHER "La moyenne des nombres positifs est", moyennePos, "et la moyenne des nombres négatifs est", moyenneNeg
+FIN
+===================================
+//Algorithme moyennePos2
+DEBUT
+	AFFICHER "Saisissez le nombre de valeurs (entre 1 et 100)"
+	SAISIR nbVal
+	TANT QUE nbVal<1 OU nbVal>100 FAIRE
+		AFFICHER "Erreur, saisissez le nombre de valeurs(entre 1 et 100)"
+		SAISIR nbVal
+	FTQ
+	somme <- 0
+	iPos <- 0
+	iNeg <- 0
+	POUR (INIT: i <- 0; TEST: i < nbVal; MAJ: i <- i + 1) FAIRE
+		AFFICHER "Saissisez la valeur" i+1
+		SAISIR nbActuel
+		SI nbActuel > 0 ALORS
+			tabVal[iPos] <- nbActuel
+			iPos <- iPos + 1
+		SINON
+			tabVal[(nbVal-1)-iNeg] <- nbActuel
+			iNeg <- iNeg + 1
+		FSI
+	FPOUR
+	sommePos <- 0
+	POUR (INIT : i <- 0; TEST i < iPos; MAJ i <- i + 1) FAIRE
+		sommePos <- sommePos + tabVal[i]
+	FPOUR
+	sommeNeg <- 0
+	POUR (INIT : i <- nbVal - iNeg; TEST: i< nbVal; MAJ: i <- i + 1) FAIRE
+		sommeNeg <- sommeNeg + tabVal[i]
+	FPOUR
+	AFFICHER "La somme des valeurs positives est", sommePos, "et la somme des valeurs négatives est", sommeNeg
+	moyennePos <- sommePos / iPos
+	moyenneNeg <- sommeNeg / iNeg
+	AFFICHER "La moyenne des valeurs positives est", moyennePos, "et la moyennes des valeurs négatives est", moyenneNeg
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================
+/*
+Maximum d'un tableau
+*/
+
+Fonction valMax(IN nbVal : entier, IN tabVal : tableau de réels) : réel
+//Valeur max tableau
+DEBUT
+	valMax <- tabVal[0]
+	POUR (INIT : i = 0;TEST : i < nbVal; MAJ : i <- i + 1) FAIRE
+		SI valMax < tabVal[i] ALORS
+			valMax <- tabVal[i]
+		FSI
+	FPOUR
+	RETOURNER valMax
+FIN
+======================================
+//Occurance du maximum
+Procédure derOcurValeur()
+DEBUT
+	AFFICHER "Sasir le nombre de reels a traiter"
+	nbR <- saisieEBornee(1,100)
+	saisieTabR(nbR,tabR)
+	valMax <- tabR[0]
+	POUR (INIT : i <- 0; TEST : i < nbR; MAJ : i <- i + 1) FAIRE
+		SI valMax <= tabR[i] ALORS
+			valMax <- tabR[i]
+			posMax <- i
+		FSI
+	FPOUR
+	AFFICHER "Le réel le plus grand est ", valMax, "et sa derniere apparition est au rang ", i+1
+FIN
+=======================================
+//Maximum et nombre d'occurences
+Procédure nbOcurValeur()
+DEBUT
+	AFFICHER "Sasir le nombre de reels a traiter"
+	nbR <- saisieEBornee(1,100)
+	saisieTabR(nbR,tabR)
+	valMax <- tabR[0]
+	nbOcur <- 0
+	POUR (INIT : i <- 0; TEST : i < nbR; MAJ : i <- i + 1) FAIRE
+		SI valMax <= tabR[i] ALORS
+			valMax <- tabR[i]
+			nbOcur <- nbOcur + 1
+		FSI
+	FPOUR
+	AFFICHER "Le réel le plus grand est ", valMax, "et apparait ", nbOcur, "fois"
+FIN
+=========================================
+//Présence d'une valeur
+Procédure presVal(IN nbVal : entier, IN tabVal : tableau de réel, IN valCherch : réel)
+DEBUT 
+	valExist <- false
+	POUR (INIT : i <- 0; TEST : i < nbVal; MAJ : i <- i + 1) FAIRE
+		SI valCherch = tabVal[i] ALORS
+			valExist <- true
+		FSI
+	FPOUR
+	SI valExist ALORS
+		AFFICHER "La valeur existe dans le tableau"
+	SINON
+		AFFICHER "La valeur n'existe pas dans le tableau"
+	FSI
+FIN
+
+
+
+
+
+
+
+
+
+=====================================================
+/*
+Suite dxes tableaux TD 9-10
+*/
+
+
+//Nombre d'ocurrences
+fonction nbOccur(IN pfNbr : entier, IN pfTabV : tableau à une entrée de 100 entiers, IN pfVal ; entier) : entier
+DEBUT
+	nbOccur <- 0
+	POUR (INIT : i <- 0; TEST : i < pfNbr; MAJ : i <- i + 1) FAIRE
+		SI pfVal = pfTabV[i] ALORS
+			nbOccur <- nbOccur + 1
+		FSI
+	FPOUR
+	RETOURNER nbOccur
+FIN
+==========================================
+//Moyenne d'un tableau
+fonction moyTab(IN pfNbr : entier, IN pfTabV : tableau à une entrée de réel) : réel
+DEBUT
+	somme <- 0
+	POUR (INIT : i <- 0; TEST : i < pfNbr; MAJ : i <- i + 1) FAIRE
+		somme <- somme + pfTabV[i]
+	FPOUR
+	moy <- somme / pfNbr
+	RETOURNER moy
+FIN
+=========================================
+//Appartenance a un tableau
+Procédure appartVal(IN pfNbr : entier, IN tabValR : tableau a une entrée de réels, pfvalCherch : réel)
+DEBUT
+	valExist <- false
+	POUR (INIT : i <- 0; TEST : i < pfnbVal; MAJ : i <- i + 1) FAIRE
+		SI pfvalCherch = pftabVal[i] ALORS
+			valExist <- true
+		FSI
+	FPOUR
+	SI valExist ALORS
+		AFFICHER "La valeur existe dans le tableau"
+	SINON
+		AFFICHER "La valeur n'existe pas dans le tableau"
+	FSI
+FIN
+=========================================
+//Symétrie d'un tableau
+fonction sym(IN nlc : entier, IN tabEnt : tableau a deux entrée de 100 entiers) : booleen
+DEBUT 
+	estSym <- true
+	POUR (INIT : i <- 0; TEST : i < nlc; MAJ : i <- i + 1) FAIRE
+		POUR (INIT : j <- 0; TEST : j < nlc; MAJ : j <- j + 1) FAIRE
+			SI tabEnt[i][j] != tabEnt[j][i] ALORS
+				estSym <- false
+			FSI
+		FPOUR
+	FPOUR
+	RETOURNER estSym
+FIN
+=========================================
+//Transposer une matrice
+Fonction transpMat(IN longueur : entier, IN largeur : entier, IN tabVal : tableau a deux entée de réel) : tableau a deux entree de réel
+DEBUT
+	POUR (INIT : i <- 0; TEST : i < largeur; MAJ : i <- i + 1) FAIRE
+		POUR (INIT : j <- 0; TEST : j < longueur; MAJ : j <- j + 1) FAIRE
+			transpTabVal[j,i] = tabVal[i,j]
+		FPOUR
+	FPOUR
+	return transpTabVal
+FIN
+==========================================
+
+
+
+
+
+
+
+
+
+============================
+/*
+Suite des tableaux TD 11
+*/
+
+procedure gainMoyen(IN nbVal : entier, IN tabVal : tableau a une entrée de réel)
+DEBUT
+	somme <- 0
+	POUR (INIT : i <- 0; TEST : i < pfNbr; MAJ : i <- i + 1) FAIRE
+		somme <- somme + pfTabV[i]
+	FPOUR
+	moy <- somme / pfNbr
+	AFFICHER "L'etudiant a gagné ", somme, " au total ce qui fait un gain journalier de ", moy
+FIN
+
+procedure maxRang(IN nbVal : entier,IN  tabVal : tableau a une entrée de réel)
+DEBUT
+	valMax <- tabR[0]
+	posMax <- 0
+	POUR (INIT : i <- 0; TEST : i < nbR; MAJ : i <- i + 1) FAIRE
+		SI valMax < tabR[i] ALORS
+			valMax <- tabR[i]
+			posMax <- i
+		FSI
+	FPOUR
+	AFFICHER "Le réel le plus grand est ", valMax, "et sa derniere apparition est au rang ", i+1
+FIN
+
+
+
+
+
+
+
+============================
+/*
+Suite des tableaux TD 12-13
+*/
+
+fonction somDiv(IN val : entier) : entier
+DEBUT
+	somme <- 0
+	POUR (INIT : i <- 1; TEST : i < val; MAJ : i <- i + 1) FAIRE
+		SI val MOD i = 0 ALORS
+			somme <- somme + i
+		FSI
+	FPOUR
+	RETOURNER somme
+FIN
+
+fonction

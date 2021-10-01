@@ -1,0 +1,191 @@
+body
+{
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family : Helvetica;
+}
+h1
+{
+  text-align: center;
+  color: white;
+}
+h2
+{
+  color : white;
+  text-decoration: underline;
+}
+p
+{
+  color: white;
+  font-size: 20px;
+}
+.acc
+{
+  text-align: center;
+}
+.content
+{
+  display: flex;
+  justify-content: space-around;
+}
+.box
+{
+  margin-top: 5%;
+  position: relative;
+  text-align: center;
+}
+.box .pbox
+{
+  position: absolute;
+  bottom: -17px;
+  padding: 10px 10px;
+}
+.pbox
+{
+  background-color: #003366;
+  animation-name: boxslideout;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  font-size: 20px;
+}
+.pbox:hover
+{
+  animation-name: boxslidein, boxslidestay;
+  animation-duration: 0.5s,9999s;
+  animation-delay: 0s,0.5s;
+  animation-timing-function: linear;
+}
+@keyframes boxslidein
+{
+  from
+  {
+    width: 10%;
+    height: 7%
+  }
+  to
+  {
+    width: 90%;
+    height: 7%;
+  }
+}
+@keyframes boxslideout {
+  from
+  {
+    width: 90%;
+    height: 7%;
+  }
+  to
+  {
+    width: 10%;
+    height: 7%
+  }
+}
+@keyframes boxslidestay {
+  from
+  {
+    width: 90%;
+    height: 7%;
+  }
+  to
+  {
+    width: 90%;
+    height: 7%;
+  }
+}
+
+#ProjetCorp
+{
+  display: flex;
+  flex-direction: column;
+}
+.TitreProjDroit
+{
+  text-align: right;
+}
+
+.ProjetGauche
+{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 1%;
+}
+
+.ProjetDroit
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.TProjet
+{
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.PDroitT
+{
+  display : flex;
+  flex-direction: column;
+}
+
+.TextDl
+{
+  text-align : right;
+  font-size: 20px;
+}
+
+.profil
+{
+  border-style: solid;
+  border-radius: 50px;
+  border-color: black;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+}
+
+.profil img
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.TProfil
+{
+  font-size: 20px;
+}
+
+footer
+{
+  background: darkgray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bandeau
+{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 1%;
+  padding-right: 1%;
+  text-align: center;
+}
+
+.bandeau > p, a
+{
+  padding-top: 0.5%;
+  font-size: 15px;;
+}
+

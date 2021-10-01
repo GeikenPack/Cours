@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Graphique
+comment0.text=\r\n\ Indiquer\ le\ ou\ les\ numeros\ de\ TP\ et\ d'exercice.\r\n\r\n\ @author\ (votre\ nom)\r\n
+comment1.params=numLigne
+comment1.target=int\ getNumColonneEtoile(int)
+comment1.text=\r\n\r\n\ @param\ numLigne\ le\ num\u00E9ro\ de\ la\ ligne\ dans\ la\ console\r\n\ @return\ le\ num\u00E9ro\ de\ la\ colonne\ o\u00F9\ on\ doit\ imprimer\ une\ \u00E9toile\r\n\r\n
+comment2.params=numLigne
+comment2.target=double\ ordonneeInitiale(int)
+comment2.text=\r\n\r\n\ @param\ numLigne\ le\ num\u00E9ro\ de\ la\ ligne\ dans\ le\ rep\u00E8re\ de\ la\ console\r\n\ @return\ l'ordonn\u00E9e\ correspondante\ dans\ le\ rep\u00E8re\ initial\r\n\r\n
+comment3.params=ordonnee
+comment3.target=double\ getAbscisseInitiale(double)
+comment3.text=\r\n\r\n\ @param\ ordonnee\ une\ ordonnee\ dans\ le\ rep\u00E8re\ initial\r\n\ @return\ l'abscisse\ du\ point\ de\ la\ courbe\ dans\ le\ rep\u00E8re\ initial\r\n\r\n
+comment4.params=abscisse
+comment4.target=int\ numColonne(double)
+comment4.text=\r\n\r\n\ @param\ abscisse\ une\ abscisse\ dans\ le\ rep\u00E8re\ initial\r\n\ @return\ le\ num\u00E9ro\ de\ colonne\ correspondant\ dans\ le\ rep\u00E8re\ de\ la\ console\r\n\r\n
+comment5.params=
+comment5.target=void\ display()
+comment5.text=\r\n\ \ Devrait\ afficher\ la\ fonction\ sinus.\r\n\r\n
+numComments=6

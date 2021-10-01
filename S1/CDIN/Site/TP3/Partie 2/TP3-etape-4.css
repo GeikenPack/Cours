@@ -1,0 +1,45 @@
+body
+{
+  background-color: #570615;
+  color: white;
+}
+h1
+{
+  text-align: center;
+}
+.strong
+{
+  font-weight: bold;
+}
+.blue
+{
+  color: blue;
+}
+.s4
+{
+  font-size: 40px;
+}
+.s2
+{
+  font-size: 15px;
+}
+.italique
+{
+  font-style: italic;
+}
+.yellow
+{
+  color: yellow;
+}
+.purple
+{
+  color: purple;
+}
+.darkblue
+{
+  color: darkblue;
+}
+.green
+{
+  color: green;
+}

@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Equivalence
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ Equivalence\ ici.\r\n\r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=
+comment1.target=int\ init()
+comment1.text=\r\n\ @return\ une\ valeur\ initiale\r\n
+comment2.params=compteur
+comment2.target=boolean\ test(int)
+comment2.text=\r\n\ Un\ test\ sur\ un\ compteur\r\n\ @param\ compteur\ sur\ lequel\ effectuer\ le\ test\r\n\ @return\ la\ valeur\ bool\u00E9enne\ d'une\ condition\ sur\ le\ compteur\r\n
+comment3.params=compteur
+comment3.target=int\ maj(int)
+comment3.text=\r\n\ Mise\ \u00E0\ jour\ du\ compteur\r\n\ @param\ compteur\ \u00E0\ mettre\ \u00E0\ jour\r\n\ @return\ la\ prochaine\ valeur\ du\ compteur\r\n
+comment4.params=
+comment4.target=void\ compteAReboursWhile()
+comment4.text=\r\n\ Compte\ \u00E0\ rebours,\ puis\ fait\ boum\r\n\r\n
+comment5.params=
+comment5.target=void\ compteARebourFor()
+numComments=6

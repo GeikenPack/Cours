@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=DatesEtCompagnie
+comment1.params=annee
+comment1.target=boolean\ estBissextile(int)
+comment1.text=\r\n\ \ @param\ annee\ une\ ann\u00E9e\r\n\ \ @return\ vrai\ si\ l'ann\u00E9e\ est\ bissextile,\ faux\ sinon\r\n
+comment2.params=mois\ annee
+comment2.target=int\ nbJours(int,\ int)
+comment2.text=\r\n\ \ D\u00E9termine\ le\ nombre\ de\ jours\ dans\ un\ mois\ d'une\ ann\u00E9e\ donn\u00E9e\r\n\ \ @param\ mois\r\n\ \ \ \ \ \ mois\r\n\ \ @param\ ann\u00E9e\r\n\ \ \ \ \ \ ann\u00E9e\r\n\ \ @return\ le\ nombre\ de\ jours\ dans\ le\ mois\r\n
+comment3.params=
+comment3.target=void\ saisieCalculAffichageValidite()
+comment4.params=jour\ mois\ annee
+comment4.target=boolean\ estValide(int,\ int,\ int)
+comment4.text=\r\n\ \ D\u00E9termine\ si\ une\ date\ est\ valide\r\n\ \ @param\ jour\r\n\ \ \ \ \ \ jour\ de\ la\ date\r\n\ \ @param\ mois\r\n\ \ \ \ \ \ mois\ de\ la\ date\r\n\ \ @param\ ann\u00E9e\r\n\ \ \ \ \ \ ann\u00E9e\ de\ la\ date\r\n\ \ @return\ vrai\ si\ la\ date\ est\ valide,\ faux\ sinon\r\n
+comment5.params=
+comment5.target=int\ saisieEntier()
+comment5.text=\r\n\ Fonction\ aidant\ a\ saisir\ un\ entier.\r\n\ A\ priori,\ pas\ besoin\ de\ la\ modifier\r\n\ @return\ entier\ saisi\ par\ l'utilisateur\r\n
+comment6.params=
+comment6.target=double\ moyenneAnneeTerrestre()
+comment6.text=\r\n\ Foncion\ calculant\ la\ moyenne\ d'une\ ann\u00E9e\ terrestre\r\n\ @return\ moyenne\ de\ jours\ dans\ une\ annee\ terrestres\r\n
+comment7.params=jour\ mois\ annee
+comment7.target=int\ ageDeJonathan(int,\ int,\ int)
+numComments=8

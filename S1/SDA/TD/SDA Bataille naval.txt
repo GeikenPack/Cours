@@ -1,0 +1,104 @@
+Enregistrement Point
+    x : entier
+    y : entier
+Fin enregistrement
+
+constructeur Point(IN pfX : entier, IN pfY : entier)
+DEBUT
+	this.x <- pfX
+	this.y <- pfY
+FIN
+/*
+Enregistrement TNPBooleen
+	tab[] : tableau à une entrée de booleen
+	nbElements : entier
+Fin enregistrement
+
+constructeur TNPBooleens(pfNbEl : entier)
+DEBUT
+	this.nbElements <- pfNbEl
+	this.tab = new booleen(nbElements)
+FIN
+*/
+Enregistrement Bateau
+	hautGauche : Point
+	taille : entier
+	estHorizontal : booléen
+	etat : TNPBooleens
+Fin Enregistrement
+
+constructeur Bateau(IN pfDebut : Point, IN pfHorizontal : booleen, IN pfLongueur : entier)
+DEBUT
+	this.hautGauche <- pfDebut
+	this.estHorizontal <- pfDebut
+	this.taille <- pfLongueur
+	etat = new TNPBooleen(this.taille)
+	POUR (INIT : i <- 0; TEST : i < this.taille;MAJ : i <- i + 1) FAIRE
+		etat[i] <- false
+	FPOUR
+FIN
+
+fonction touche(IN tir : Point, IN bat : Bateau) : booleen
+DEBUT
+	SI bat.estHorizontal ALORS
+		SI tir.x >= bat.hautGauche.x ET tir.x <= bat.hautGauche.x+bat.taille ET tir.y == bat.hautGauche.y ALORS
+			RETOURNER true
+		FSI
+	SINON
+		SI tir.y >= bat.hautGauche.y ET tir.y <= bat.hautGauche.y+bat.taille ET tir.x == bat.hautGauche.x ALORS
+			RETOURNER true
+		FSI
+	FSI
+	RETOURNER false
+FIN
+
+fonction conflit(IN pfPlacé : Bateau, IN pfEssai : Bateau) : booleen
+DEBUT
+	SI psEssaie.estHorizontal ALORS
+		POUR(INIT : i <- pfEssai.hautGauche.x; TEST: i < pfEssai.taille; MAJ: i <- i + 1) FAIRE
+			Point pTemp <- new Point(i,pfEssai.hautGauche.y)
+			SI touche(pTemp, pfPlacé) ALORS
+				RETOURNER true
+			FSI
+		FPOUR
+	SINON
+		POUR(INIT : i <- pfEssai.hautGauche.y; TEST: i < pfEssai.taille; MAJ: i <- i + 1) FAIRE
+			Point pTemp <- new Point(pfEssai.hautGauche.x,i)
+			SI touche(pTemp, pfPlacé) ALORS
+				RETOURNER true
+			FSI
+		FPOUR
+	RETOURNER false
+FIN
+
+fonction choixPointUtilisateur(): Point
+DEBUT
+	AFFICHER(ecran) "Saisissez la coordonnée X"
+	SAISIR(clavier) coordX
+	AFFICHER(ecran) "Saisissez la coordonnée Y"
+	SAISIR(clavier) coordY
+	Point point <- new Point(coordX, coordY)
+	return point
+FIN
+
+fonction placerBateaux(IN pfTaille : entier, IN pfNbBatExistant : entier, IN/OUT pfTabBatExistant : tab de Bateaux) : Bateau
+DEBUT
+	AFFICHER(ecran) "Sellectionnez le point haut gauche du bateau"
+	pointHG <- choixPointUtilisateur()
+	AFFICHER(ecran) "Le bateau est-il a l'horizontal?(O ou N)"
+	Saisir(clavier) choixH
+	SI choixH = 'O' ALORS
+		choixH <- true
+	SINON choixH <- false
+	bat <- new Bateau(pointHG, choixH, pfTaille)
+	SI pfNbBatExistant != 0 ALORS
+		POUR (INIT : i <- 0;TEST : i < pfNbBatExistant; MAJ : i <- i + 1) FAIRE
+			SI conflit(pfTabBatExistant[i], bat) ALORS
+				bat <- placerBateaux(pfTaille, pfNbBatExistant, pfTabBatExistant)
+			FSI
+		FPOUR
+	FSI
+	pfTabBatExistant[pfNbBatExistant] <- bat
+	RETOURNER bat
+FIN
+

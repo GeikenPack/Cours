@@ -1,0 +1,85 @@
+fonction maxST(IN pfDeb : entier, IN pfFin : entier, IN pfTabR : TNPReel) : entier
+DEBUT
+	iMax <- pfDeb
+	POUR (INIT : i <- pfDeb+1; TEST : i < pfFin; MAJ : i <- i + 1) FAIRE
+		SI pfTabR[iMax] < pfTabR[i] ALORS
+			imax <- i
+		FSI
+	FPOUR
+	RETOURNER iMax
+FIN
+
+procedure triMax(IN/OUT pfTabR,)
+DEBUT
+	POUR (INIT : i <- pfTabR.nbElt-1, TEST : i >= 0, MAJ : i <- i - 1) FAIRE
+		temp <- pfTabR[i]
+		pfTabR[i] <- pfTabR[maxST(0,i,pfTabR)]
+		pfTabR[maxST(0,i,pfTabR)] <- temp
+	FPOUR
+FIN
+
+procedure triBulle(IN/OUT pfTabR)
+DEBUT
+	pasEchange <- false
+	i <- pfTab.nbElt
+	TANT QUE !pasEchange FAIRE
+		pasEchange <- true
+		POUR (INIT j <- 0; j < i; j <- j + 1) FAIRE
+			SI pfTabR.lesElements[j] > pfTabR.lesElements[j+1] ALORS
+				echanger(pfTabR.lesElements[j],pfTabR.lesElements[j+1]
+				pasEchange <- false
+			FSI
+		FPOUR
+		i <- i - 1
+	FTQ
+FIN
+
+procedure triEtu(IN/OUT TNPEtu: pfTabEtu)
+DEBUT
+	i <- pfTabEtu.nbElt-1
+	pasEchange <- false
+	TANT QUE !pasEchange FAIRE
+		pasEchange <- true
+		POUR (INIT : j <- 0; j <- i; j++) FAIRE
+			SI pfTabEtu.lesElements[j].nom.compareTo(pfTabEtu.lesElements[j+1].nom) >0 ALORS
+				echanger(pfTabEtu,j,j+1)
+				pasEchange <- false
+			FSI
+		FPOUR
+	FTQ
+FIN
+
+/**
+*Tri dans un nouveau TNP deux TNP triés (pfTabR1 et pfTabR2)
+*@param pfTabR1 IN : premier TNP
+*@param pfTabR2 IN : deuxième TNP
+*/
+fonction triFusion(IN TNPReel: pfTabR1, IN TNPReel : pfTabR2): TNPReel
+DEBUT
+	i <- 0
+	j <- 0
+	k <- 0
+	TANT QUE i < pfTabR1.nbElt ET j < pfTabR2.nbElt FAIRE
+		SI pfTabR1.lesElements[i] > pfTabR2.lesElements[j] ALORS
+			pfTabFusion.lesElements[k] <- pfTabR2.lesElements[j]
+			j <- j + 1
+		SINON
+			pfTabFusion.lesElements[k] <- pfTabR1.lesElements[i]
+			i <- i + 1
+		FSI
+		k <- k + 1
+	FTQ
+	SI i = pfTabR1.nbElt ALORS
+		POUR (INIT :;TEST: j < pfTabR2.nbElt; MAJ : j <- j + 1) FAIRE
+			pfTabFusion.lesElements[k] <- pfTabR2.lesElements[j]
+			k <- k + 1
+		FPOUR
+	SINON
+		POUR (INIT :;TEST: i < pfTabR1.nbElt; MAJ : i <- i + 1) FAIRE
+			pfTabFusion.lesElements[k] <- pfTabR2.lesElements[i]
+			k <- k + 1
+		FPOUR
+	FSI
+	pfTabFusion.nbElt <- k
+	RETOURNER pfTabFusion
+FIN

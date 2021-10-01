@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=FileCirculaireOperations
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ FileCirculaireOperations\ ici.\r\n\r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=pfNbElt
+comment1.target=FileCirculaire\ creerFile(int)
+comment1.text=\r\n\ Cr\u00E9er\ une\ file\ circulaire\ de\ taille\ pfNbElt\r\n\ \r\n\ @param\ pfNbElt\ IN\ \:\ nombre\ d'\u00E9l\u00E9ments\ max\ de\ la\ file\r\n\ @return\ FileCirculaire\ \:\ File\ cr\u00E9er\r\n
+comment2.params=pfFile
+comment2.target=boolean\ estPleine(FileCirculaire)
+comment2.text=\r\n\ Retourne\ true\ si\ la\ file\ est\ pleine\ et\ false\ si\ elle\ ne\ l'est\ pas\r\n\ @param\ pfFile\ IN\ \:\ File\ \u00E0\ verifier\r\n\ @return\ boolean\ \:\ Etat\ de\ la\ file\r\n
+comment3.params=pfFile
+comment3.target=boolean\ estVide(FileCirculaire)
+comment3.text=\r\n\ Retourne\ true\ si\ la\ file\ est\ vide\ et\ false\ si\ elle\ ne\ l'est\ pas\r\n\ \r\n\ @param\ pfFile\ IN\ \:\ File\ a\ verifier\r\n\ @return\ boolean\ \:\ Etat\ de\ la\ file\r\n
+comment4.params=pfFile\ pfElt
+comment4.target=void\ enfiler(FileCirculaire,\ java.lang.String)
+comment4.text=\r\n\ Enfile\ un\ \u00E9l\u00E9ment\ pfElt\ dans\ une\ FileCirculaire\ pfFile\r\n\ \r\n\ @param\ pfElt\ IN\ \:\ Element\ a\ enfiler\r\n\ @param\ pfFile\ IN/OUT\ \:\ File\ a\ modifier\r\n\ @throw\ Exception\ si\ pfFile\ est\ pleine\r\n
+comment5.params=pfFile
+comment5.target=void\ defiler(FileCirculaire)
+comment5.text=\r\n\ Defile\ un\ \u00E9l\u00E9ment\ de\ la\ FileCirculaire\ pfFile\r\n\ \r\n\ @param\ pfFile\ \:\ IN/OUT\ \:\ File\ a\ modifier\r\n\ @throw\ Exception\ si\ pfFile\ est\ vide\r\n
+comment6.params=pfFile
+comment6.target=void\ afficherFile(FileCirculaire)
+comment7.params=
+comment7.target=void\ main()
+numComments=8

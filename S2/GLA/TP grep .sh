@@ -1,0 +1,1 @@
+grep -n -E '('\ suis\n '|'\ es\ '|'est\ '|'\ sommes\ '|'\ êtes\ '|'\ sont\ ')' greptest.txt

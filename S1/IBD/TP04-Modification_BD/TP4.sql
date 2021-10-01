@@ -1,0 +1,43 @@
+ALTER TABLE Continent
+add (population DECIMAL(10),
+	croissance DECIMAL(4,2)
+	);
+	
+DESC Continent;
+
+ALTER TABLE Continent
+modify nom VARCHAR(30);
+
+ALTER TABLE Pays
+modify nomc VARCHAR(30);
+ALTER TABLE Pays
+MODIFY nom VARCHAR(30);
+ALTER TABLE Pays 
+modify capitale DECIMAL;
+
+ALTER TABLE Frontiere
+add CONSTRAINT CK_FRONTIERE_LONGUEUR
+CHECK (longueur >= 0);
+
+ALTER TABLE Fleuve
+add CONSTRAINT CK_FLEUVE_LONGUEUR
+CHECK (longueur > 0);
+
+ALTER TABLE Montagne
+add CONSTRAINT CK_MONTAGNE_ALTITUDE
+CHECK (altitude > 0);
+
+ALTER TABLE Continent
+add ( CONSTRAINT CK_CONTINENT_SUPERFICIE
+	CHECK (superficie > 0),
+	CONSTRAINT CK_CONTINENT_POPULATION
+	CHECK (population > 0));
+	
+ALTER TABLE Pays
+add ( CONSTRAINT CK_PAYS_SUPERFICIE
+	CHECK (superficie >= 0),
+	CONSTRAINT CK_PAYS_POPULATION
+	CHECK (population > 0));
+
+ALTER TABLE Pays
+MODIFY nomc CONSTRAINT NN_PAYS_NOMC NOT NULL;

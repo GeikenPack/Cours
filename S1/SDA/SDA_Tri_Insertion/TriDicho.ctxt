@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=TriDicho
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ TriDicho\ ici.\r\n\r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=pfTab\ nbAjout
+comment1.target=void\ inserer1(TNPReel,\ double)
+comment1.text=\r\n\ Permet\ d'ins\u00E9rer\ un\ \u00E9l\u00E9ment\ dans\ un\ tnp\ de\ telle\ mani\u00E8re\ \u00E0\ ce\ que\ l'ordre\ d\u00E9croissant\ soit\ respect\u00E9\r\n\ @param\ pfTab\ IN/OUT\ Le\ dit\ tnp\r\n\ @param\ nbAjout\ IN\ \:\ l'\u00E9l\u00E9ment\ \u00E0\ ins\u00E9rer\r\n\ \r\n\ @throws\ si\ tableau\ plein\r\n
+comment2.params=pfTab\ nbAjout
+comment2.target=void\ inserer2(TNPReel,\ double)
+comment3.params=
+comment3.target=void\ principal()
+numComments=4
