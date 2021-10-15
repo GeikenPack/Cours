@@ -1,5 +1,7 @@
 """
 Library for processing dictionaries.
+
+@author Jonathan Morgado-Samagaio
 """
 
 

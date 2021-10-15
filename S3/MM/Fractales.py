@@ -11,31 +11,28 @@ image_x = (x2 - x1) * zoom
 image_y = (y2 - y1) * zoom
 
 pygame.init()
-screen = pygame.display.set_mode((500,500))
-pygame.display.set_caption("Fractale")
+screen = pygame.display.set_mode((500, 500))
+pygame.display.set_caption("Fractal")
 
 for x in range(int(image_x)):
     for y in range(int(image_y)):
-        cr = x/zoom+x1
-        ci = y/zoom+y1
-        zr = 0
-        zi = 0
+        c_reelle = x / zoom + x1
+        c_imaginaire = y / zoom + y1
+        zr = x / zoom + x1
+        zi = y / zoom + y1
         i = 0
 
-        while (zr*zr + zi*zi < 4 and i < max_it):
-            tmp = zr
-            zr = zr*zr - zi*zi + cr
-            zi = 2*tmp*zi + ci
-            i+=i
+        for i in range(max_it):
+            if zr**2 + zi**2 < 4:
+                zr , zi = zr**2 - zi**2 + c_reelle, 2 * zr * zi + c_imaginaire
+                if i == max_it - 1:
+                    screen.set_at((x, y), (i, 0, i*255/max_it))
+            else:
+                screen.set_at((x, y), (0, 0, 0))
 
-        if i == max_it:
-            screen.set_at((x,y), (255,255,255))
-        else:
-            screen.set_at((x,y),(0,0,0))
-        
-    pygame.display.flip()
 
-loop = True;
+pygame.display.flip()
+loop = True
 while loop:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

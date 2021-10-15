@@ -10,6 +10,7 @@ import java.util.Map;
  * Utility class for dictionaries. This class offers static methods for
  * manipulating objects of type Map.
  * 
+ * @author Jonathan Morgado-Samagaio
  */
 public class MapUtils {
 
