@@ -40,7 +40,7 @@ END;
 /
 
 INSERT INTO Pandemic (iso3, ddate, cases, vacc, fvacc)
-VALUES ('FRA', TO_DATE('2021-09-20','YYYY-MM-DD'), 1, 1, 1);
+VALUES ('FRA', TO_DATE('2021-10-20','YYYY-MM-DD'), 1, 1, 1);
 
 SELECT * FROM Statistique;
 
@@ -95,7 +95,7 @@ END;
 DROP TRIGGER t_iud_pandemic;
 
 INSERT INTO Pandemic (iso3, ddate, cases, vacc, fvacc)
-VALUES ('FRA', TO_DATE('2021-09-21','YYYY-MM-DD'), 11, 11, 11);
+VALUES ('FRA', TO_DATE('2021-10-21','YYYY-MM-DD'), 11, 11, 11);
 
 SELECT * FROM Trace;
 

@@ -11,7 +11,7 @@
             $_SESSION['SmorgadoJonathan'] = $_POST['login'];
             if (isset($_POST['cb']))
             {
-                setcookie('CmorgadoJonathan', time()+5*60);
+                setcookie('CmorgadoJonathan', $_POST['login'], time()+5*60);
             }
             header("Location: index.php");
         }
