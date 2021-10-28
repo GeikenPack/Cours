@@ -1,0 +1,7 @@
+<op operator="-">
+  <op operator="*">
+    <number>4</number>
+    <var>a</var>
+  </op>
+  <var>b</var>
+</op>
