@@ -1,9 +1,7 @@
 package hash;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -22,12 +20,12 @@ import java.util.Set;
 public class JMHashTable<K, V> implements Map<K, V>{
 
 	/**
-	 * Variable de type Liste contenant des Mapping d'ensemble clé/valeur
+	 * Variable de type Liste contenant des Mapping d'ensemble clï¿½/valeur
 	 */
 	protected List<Mapping<K, V>>[] table;
 
 	/**
-	 * Variable de type entier contenant le nombre d'élément dans la table
+	 * Variable de type entier contenant le nombre d'ï¿½lï¿½ment dans la table
 	 */
 	protected int size;
 	

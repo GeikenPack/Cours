@@ -33,7 +33,6 @@ public class MapTest {
 
 	@SuppressWarnings("unchecked")
 	static <K, V> Map<K, V> getObservedMap() {
-		// TODO: return a new instance of the map under test
 		return (Map<K, V>) new JMHashTable<>();
 	}
 

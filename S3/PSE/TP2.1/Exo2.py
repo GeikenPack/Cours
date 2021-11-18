@@ -4,7 +4,8 @@ import traceback
 
 try:
     os.link("f", "f~")
-    fd1 = os.open("f", os.O_WRONLY|os.O_CREAT|os.O_TRUNC)
+    os.unlink("f")
+    fd1 = os.open("f", os.O_WRONLY|os.O_CREAT)
     fd2 = os.open("f~", os.O_RDONLY)
     debutLigne = True
     buffer = os.read(fd2, 1)
@@ -17,8 +18,9 @@ try:
         else:
             if not buffer[0] == 32:
                 debutLigne = False
+                os.write(fd1, buffer)
         buffer = os.read(fd2, 1)
-    #os.unlink("f~")
+    os.unlink("f~")
 except OSError as e:
     traceback.print_exc()
     print(e.strerror)
