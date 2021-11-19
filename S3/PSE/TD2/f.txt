@@ -1,0 +1,7 @@
+total 20
+-rw-r--r-- 1 pack pack 274 18 nov.  20:07 Exo1.py
+-rw-r--r-- 1 pack pack 654 18 nov.  21:14 Exo2.py
+-rw-r--r-- 1 pack pack 158 19 nov.  12:38 Exo3.py
+-rwxr-xr-x 1 pack pack  15 19 nov.  12:47 f
+-rwxr-xr-x 1 pack pack   0 19 nov.  12:58 f.txt
+-rw-r--r-- 1 pack pack 148 18 nov.  20:07 Test.py

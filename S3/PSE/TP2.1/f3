@@ -1,0 +1,2 @@
+  File "/home/pack/git/Cours/S3/PSE/TP2.1/Exo3.py", line 10, in <module>
+    traceback.print_stack()
