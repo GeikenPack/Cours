@@ -26,7 +26,7 @@ for x in range(int(image_x)):
             if zr**2 + zi**2 < 4:
                 zr , zi = zr**2 - zi**2 + c_reelle, 2 * zr * zi + c_imaginaire
                 if i == max_it - 1:
-                    screen.set_at((x, y), (i, 0, i*255/max_it))
+                    screen.set_at((x, y), (i, 255, i*255/max_it))
             else:
                 screen.set_at((x, y), (0, 0, 0))
 

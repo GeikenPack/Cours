@@ -11,6 +11,13 @@
     {
         header('Location: FormConnexion.php?msgError=Acces Interdit');
     }
+    require_once("connect.inc.php");
+    $reqp = 'SELECT idCategorie, nomCategorie
+                FROM Categories';
+    $res = $conn->prepare($reqp);
+    $res->execute();
+    $res->setFetchMode(PDO::FETCH_ASSOC);
+    $tabCat = $res->fetchAll();
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +36,6 @@
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                     <select name="cat">
                         <?php
-                            include("InitTableaux.php");
                             for ($i = 0; $i < sizeof($tabCat); $i++)
                             { 
                                 echo '<option value="'.$tabCat[$i]['idCategorie'].'"';
@@ -59,7 +65,7 @@
                             array_push($tmp, $elm);
                         }
                         echo '<br><br>';
-                        afficheTabHtml($tabProd, $tmp);
+                        afficheTabHtml($tmp, $tmp);
                     }
                 ?>
             </div>

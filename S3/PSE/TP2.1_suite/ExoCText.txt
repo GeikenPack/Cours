@@ -1,0 +1,7 @@
+ExoA.py
+ExoAResult.txt
+exoATexte.txt
+ExoB.py
+ExoBTexte.txt
+ExoC.py
+ExoCText.txt
