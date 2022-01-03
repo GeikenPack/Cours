@@ -6,8 +6,11 @@ import random
 import time
 
 try:
+
     sm = p.SharedMemory("/tmp", p.O_CREAT, size=os.sysconf("SC_PAGE_SIZE"))
     mm = mmap.mmap(sm.fd, os.sysconf("SC_PAGE_SIZE"), prot=mmap.PROT_READ | mmap.PROT_WRITE)
+    semaphore = p.Semaphore("/semTmpp", p.O_CREAT | p.O_EXCL, 0o600, 0)
+
 
     li = []
     for i in range(20):
@@ -16,7 +19,7 @@ try:
     for i in range(len(li)):
         mm[i] = li[i]
 
-    time.sleep(30)
+    semaphore.release()
     mm.close()
     sm.unlink()
 except OSError as e:

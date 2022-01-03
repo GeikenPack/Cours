@@ -1,7 +1,16 @@
 import posix_ipc as p
 import mmap
+import os
+import traceback
 
-sm = p.SharedMemory("/tmp")
-mm = mmap.mmap(sm, 0)
-print(len(mm))
-print(elm for elm in mm)
+try:
+    sm = p.SharedMemory("/tmp")
+    mm = mmap.mmap(sm.fd, os.sysconf("SC_PAGE_SIZE"), prot=mmap.PROT_READ | mmap.PROT_WRITE)
+    for i in range(len(mm)):
+        if (mm[i] != 0):
+            print(mm[i])
+    
+except OSError as e:
+    traceback.print_exc()
+    print(e.strerror)
+    exit(1)

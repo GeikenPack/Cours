@@ -10,17 +10,8 @@ try:
     if len(mm)%2 != 0:
         print("Nombre d'octets non pair")
     else:
-        for i in range(len(mm)-1):
-            if mm[i] == mm[i+1]:
-                if pair == True:
-                    mm[i-3] = mm[i]
-                    mm[i-2] = mm[i]
-                    mm[i] = octTmp
-                    mm[i+1] = octTmp
-                    pair = False
-                else:
-                    pair = True
-                    octTmp = mm[i]
+        for i in range(0, len(mm)-1, 2):
+            mm[i], mm[i+1] = mm[i+1], mm[i]
 except OSError as e:
     traceback.print_exc()
     print(e.strerror)

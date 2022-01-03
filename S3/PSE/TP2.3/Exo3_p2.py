@@ -1,24 +1,18 @@
-import traceback
 import posix_ipc as p
-import os
 import mmap
-import random
-import time
+import os
+import traceback
 
 try:
     sm = p.SharedMemory("/tmp", p.O_CREAT, size=os.sysconf("SC_PAGE_SIZE"))
     mm = mmap.mmap(sm.fd, os.sysconf("SC_PAGE_SIZE"), prot=mmap.PROT_READ | mmap.PROT_WRITE)
+    semaphore = p.Semaphore("/semTmpp", mode=0o600, initial_value=0)
+    semaphore.acquire()
 
-    li = []
-    for i in range(20):
-        li.append(random.randint(0,255))
-
-    for i in range(len(li)):
-        mm[i] = li[i]
-
-    time.sleep(30)
-    mm.close()
-    sm.unlink()
+    for i in range(len(mm)):
+        if (mm[i] != 0):
+            print(mm[i])
+    semaphore.unlink()
 except OSError as e:
     traceback.print_exc()
     print(e.strerror)
