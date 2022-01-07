@@ -1,4 +1,4 @@
 <?php
-require 'Controleur/Routeur.php';
-$routeur = new Routeur();
-$routeur->routerRequete();
+    require 'Controleur/Routeur.php';
+    $routeur = new Routeur();
+    $routeur->routerRequete();

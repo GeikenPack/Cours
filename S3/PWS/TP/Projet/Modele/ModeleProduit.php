@@ -11,10 +11,9 @@ class ModeleProduit {
 		global $conn;
 		$res = $conn->prepare("Select * from Produits");
 		$res->execute();
-		var_dump($res);	
 		$ListeProd = NULL;		
 		foreach($res as $prod) {
-		    $ListeProd[] = new Produit($prod["idProduit"], $prod["idCategorie"], $prod["nomProduit"], $prod["prixProduit"]);
+		    $ListeProd[] = new Produit($prod["idProduit"], $prod["idCategorie"], $prod["nomProduit"], $prod["prixProduit"], $prod["Image"]);
  		}
 		return $ListeProd; 
     }
@@ -24,7 +23,7 @@ class ModeleProduit {
 		$res = $conn->prepare("Select * from Produits where idProduit = :pIdProduit");
 		$res->execute(array('pIdProduit' => $idProduit));
 		$prod = $res->fetch();
-		$unProduit = new Produit($prod["idProduit"], $prod["idCategorie"], $prod["nomProduit"],$prod["prixProduit"]);
+		$unProduit = new Produit($prod["idProduit"], $prod["idCategorie"], $prod["nomProduit"],$prod["prixProduit"], $prod["Image"]);
         return $unProduit;
     }	
 	
@@ -34,9 +33,26 @@ class ModeleProduit {
 		$res->execute( array ('pIdCategorie' => $idCategorie) );	
 		$ListeProdCat = NULL;
 		foreach($res as $prod) {
-		    $ListeProdCat[] = new Produit($prod["idProduit"], $prod["idCategorie"], $prod["nomProduit"], $prod["prixProduit"]);
+		    $ListeProdCat[] = new Produit($prod["idProduit"], $prod["idCategorie"], $prod["nomProduit"], $prod["prixProduit"], $prod["Image"]);
  		}
 		return $ListeProdCat; 
     }		
+
+	public function createProduit($prod)
+	{
+		global $conn;
+		$idP = $prod->idProduit;
+		$idC = $prod->idCategorie;
+		$nomP = $prod->nomProduit;
+		$prixP = $prod->prixProduit;
+		$image = $prod->image;
+		$res = $conn->prepare('INSERT Into Produits VALUES (:pidProduit, :pidCategorie, :pnomProduit, :pprixProduit, :pImage)');
+		
+		$res->execute(array('pidProduit' => $idP,
+		'pidCategorie' => $idC,
+		'pnomProduit' => $nomP,
+		'pprixProduit' => $prixP,
+		'pImage' => $image));
+	}
 }
 ?>
