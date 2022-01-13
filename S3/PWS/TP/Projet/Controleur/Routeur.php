@@ -21,7 +21,7 @@
 					if (!empty($_GET['route'])) {
 						// on détermine avec quelle méthode de quel contrôleur on veut travailler
 						switch($_GET['route']) {
-							case 'produitCreate' :  
+							case 'produitCreate' :  //Création d'un produit
 								$ctrlProd = new ControleurProduit();
 								$ctrlProd->createProduit();
 								break;
@@ -31,19 +31,25 @@
 									$ctrlProd = new ControleurProduit();
 									$ctrlProd->getProduit($_GET['id']);
 								}
-								else { // s'il manque le paramètre id alors on affiche la liste des étudiants
+								else { // s'il manque le paramètre id alors on affiche la liste des produits
 									$ctrlProd = new ControleurProduit();
 									$ctrlProd->getListeProduits();
 								}
 								break;
 													
-							case 'produitUpdate' :   // modification d'un étudiant à partir de son id
+							case 'produitUpdate' :   // modification d'un produit à partir de son id
+								$ctrlProd = new ControleurProduit();
+								$ctrlProd->updateProduit($_GET['id']);
 								break;
 														
-							case 'produitDelete' :   // suppression d'un étudiant à partir de son id
+							case 'produitDelete' :   // suppression d'un produit à partir de son id
+								$ctrlProd = new ControleurProduit();
+								$ctrlProd->deleteProduit($_GET['id']);
 								break;
 					
-							case 'categorieCreate' :     // ajout d'un groupe...
+							case 'categorieCreate' :     // ajout d'une catégorie...
+								$ctrlCat = new ControleurCategorie();
+								$ctrlCat->ajouterCategorie();
 								break;
 							
 							case 'categorieRead' : 	  
@@ -57,10 +63,14 @@
 								}
 								break;
 
-							case 'categorieUpdate' : 	  // modification d'un groupe à partir de son id
+							case 'categorieUpdate' : 	  // modification d'une catégorie à partir de son id
+								// TODO : Update de catégorie
+								$ctrlCat = new ControleurCategorie();
+								$ctrlCat->modifierCategorie($_GET['id']);
 								break;
 													
-							case 'categorieDelete' : 	  // suppression d'un groupe à partir de son id
+							case 'categorieDelete' : 	  // suppression d'une cat"gorie à partir de son id
+								// TODO : Suppression de catégorie
 								break;
 							
 							case 'deconnexion' : //Deconnexion de l'utilisateur
@@ -69,13 +79,13 @@
 								$ctrlConn->getFormConnexion();
 								break;
 													
-							default: 	              // pour toutes les autres valeurs, on affiche la liste des groupes 
+							default: 	              // pour toutes les autres valeurs, on affiche la page d'accueil 
 								$ctrlAcc = new ControleurAccueil();
 								$ctrlAcc->getAccueil();
 								break;			
 						}
 					}
-					// aucune paramètre 'route' : on affiche la liste des groupes
+					// aucune paramètre 'route' : on affiche la page d'accueil
 					else {  
 						$ctrlAcc = new ControleurAccueil();
 						$ctrlAcc->getAccueil();

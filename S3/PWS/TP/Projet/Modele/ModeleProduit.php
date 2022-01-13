@@ -41,18 +41,37 @@ class ModeleProduit {
 	public function createProduit($prod)
 	{
 		global $conn;
-		$idP = $prod->idProduit;
-		$idC = $prod->idCategorie;
-		$nomP = $prod->nomProduit;
-		$prixP = $prod->prixProduit;
-		$image = $prod->image;
 		$res = $conn->prepare('INSERT Into Produits VALUES (:pidProduit, :pidCategorie, :pnomProduit, :pprixProduit, :pImage)');
 		
-		$res->execute(array('pidProduit' => $idP,
-		'pidCategorie' => $idC,
-		'pnomProduit' => $nomP,
-		'pprixProduit' => $prixP,
-		'pImage' => $image));
+		$res->execute(array('pidProduit' => $prod->idProduit,
+							'pidCategorie' => $prod->idCategorie,
+							'pnomProduit' => $prod->nomProduit,
+							'pprixProduit' => $prod->prixProduit,
+							'pImage' => $prod->image));
+	}
+
+	public function updateProduit($prod)
+	{
+		global $conn;
+		$res = $conn->prepare('UPDATE Produits SET idCategorie = :idC,
+													nomProduit = :nomP,
+													prixProduit = :prixP, 
+													image = :pimage 
+												WHERE idProduit = :idP');
+		$res->execute(array('idC' => $prod->idCategorie, 
+							'nomP' => $prod->nomProduit, 
+							'prixP' => $prod->prixProduit, 
+							'pimage' => $prod->image, 
+							'idP' => $prod->idProduit));
+	}
+
+	public function deleteProduit($idProduit)
+	{
+		global $conn;
+		$res = $conn->prepare('DELETE FROM Produits WHERE idProduit = :idProduit');
+		$res->execute(array('idProduit' => $idProduit));
+		$filename = 'prod'.$idProduit.'.gif';
+		unlink('Vue/images/'.$filename);
 	}
 }
 ?>

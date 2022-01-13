@@ -1,6 +1,7 @@
 <?php
-// Cette classe servira à transferer, en mode objet, des données entre le modèle, le contrôleur et la vue
-class Produit {
+/**  Cette classe servira à transferer, en mode objet, des données entre le modèle, le contrôleur et la vue */
+class Produit 
+{
     public $idProduit;
     public $idCategorie;
     public $nomProduit;

@@ -20,7 +20,8 @@
 						//  détail d'un étudiant
 						echo '<tr><td><a href="index.php?route=produitRead&id='.$vProd->idProduit.'">'.$vProd->idProduit.'</a></td>';
 						echo '<td>'.$vProd->idCategorie.'</td><td>'.$vProd->nomProduit.'</td><td>'.$vProd->prixProduit.'</td><td><img src="Vue/images/'.$vProd->image.'.gif" height=60/></td>';
-						echo '<td><img src="Vue/images/modifier.jpg" height=60</td><td><img src="Vue/images/supprimer.jpg" height=60</td></tr>';
+						echo '<td><a href="index.php?route=produitUpdate&id='.$vProd->idProduit.'"><img src="Vue/images/modifier.jpg" height=60></a></td>
+							  <td><a href="index.php?route=produitDelete&id='.$vProd->idProduit.'" onclick="return confirm(\'Etes vous sur de vouloir supprimer ce produit?\');"><img src="Vue/images/supprimer.jpg" height=60/></a></td></tr>';
 					}
 					echo "</table>";
 					echo '<center><a href="index.php?route=produitCreate"><img src="Vue/images/ajouter.jpg" height=60></a></center>';

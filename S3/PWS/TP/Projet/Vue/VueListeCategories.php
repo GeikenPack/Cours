@@ -18,13 +18,13 @@
                     echo '<tr><td><a href="index.php?route=categorieRead&id='
                             .$vCat->idCategorie.'">'.$vCat->idCategorie.'</a></td>';
                     echo '<td>'.$vCat->nomCategorie.'</td>';
-                    echo '<td><img src="Vue/images/modifier.jpg" height=60/></td>';
-                    echo '<td><img src="Vue/images/supprimer.jpg" height=60/></td>';
+                    echo '<td><a href="index.php?route=categorieUpdate&id='.$vCat->idCategorie.'"><img src="Vue/images/modifier.jpg" height=60/></a></td>';
+                    echo '<td><a href="index.php?route=categorieDelete&id='.$vCat->idCategorie.'"><img src="Vue/images/supprimer.jpg" height=60/></a></td>';
                     echo '</tr>';
                 }
             ?>
         </table>
-        <center><img src="Vue/images/ajouter.jpg" height=60/></center>
+        <center><a href="index.php?route=categorieCreate"><img src="Vue/images/ajouter.jpg" height=60/></a></center>
         <?php include("./include/footer.php"); ?>
     </body>
 </html>
