@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Envoie SMS</string>
+    <string name="numero_texte">Numero</string>
+    <string name="numero_champs">Entrez le numero</string>
+    <string name="message_texte">Message</string>
+    <string name="message_champs">Tapez le message</string>
+    <string name="boutton_envoyer">Envoyer</string>
 </resources>

@@ -1,0 +1,1 @@
+       77 var1 PIC 9(5) value=0.
