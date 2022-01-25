@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/cyan"
+    tools:context="com.example.helloworld.MainActivity">
+
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_width="256dp"
+        android:layout_height="@dimen/hauteur1"
+        android:layout_margin="@dimen/marge1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/edit_message"
+        android:gravity="top"
+        android:background="@color/gris"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="128dp"
+        android:layout_height="@dimen/hauteur1"
+        android:layout_marginTop="@dimen/marge1"
+        android:onClick="displayMessage"
+        android:text="@string/button_send"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_message" />
+</androidx.constraintlayout.widget.ConstraintLayout>
