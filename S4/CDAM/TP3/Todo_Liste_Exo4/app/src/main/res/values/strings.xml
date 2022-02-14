@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Todo List</string>
+    <string name="listeText">Liste des Todos existants</string>
+    <string name="listview_menu_show_text">Afficher le todo</string>
+    <string name="listview_menu_modify_text">Modifier le todo</string>
+    <string name="listview_menu_remove_text">Supprimer le todo</string>
+    <string name="main_menu_ajouter_todo_text">Ajouter un todo</string>
+</resources>

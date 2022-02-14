@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TODO</string>
+    <string name="okBut">Ok</string>
+    <string name="annBut">Annuler</string>
+    <string name="titreText">Titre :</string>
+    <string name="titreChamp">Entre le titre ...</string>
+    <string name="todoText">Todo :</string>
+    <string name="todoChamp">Entre votre todo ...</string>
+    <string name="dateText">Pour le :</string>
+    <string name="lienText">En lien avec :</string>
+    <string name="nomChamps">Nom de personne ...</string>
+    <string name="commChamp">Commentaire ...</string>
+</resources>

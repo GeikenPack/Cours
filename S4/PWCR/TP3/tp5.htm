@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>TP5 - Évènements Tableaux et Onglets</title>
+	<!-- Styles et scripts de base -->
+	<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/style.css" media="screen" />
+	<!-- Styles et scripts du tp -->
+	<script type="text/javascript" src="script/tp5.js"></script>
+</head>
+<body>
+<div id="header">
+	<ul id="header-breadcrumb">
+		<li>TP&nbsp;5</li>
+	</ul>
+</div>
+<div id="conteneur">
+	<div id="demo">
+	<h1>Évènements Tableaux et Onglets</h1>
+	<ul class="onglets">
+		<li><a href="#reg15">Nord Pas de Calais</a></li>
+		<li><a href="#reg5">Centre</a></li>
+		<li><a href="#reg21">Lorraine</a></li>
+	</ul>
+	<table id="reg15">
+		<caption>Nord Pas de Calais</caption>
+		<thead>
+			<tr>
+				<th id="reg15nom">Nom</th>
+				<th id="reg15t4">2016</th>
+				<th id="reg15t3">2015</th>
+				<th id="reg15t2">2014</th>
+				<th id="reg15t1">2013</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="dep62">
+				<th headers="reg15nom">Pas-de-Calais</th>
+				<td headers="reg15t4">12,6</td>
+				<td headers="reg15t3">12,7</td>
+				<td headers="reg15t2">12,7</td>
+				<td headers="reg15t1">12,6</td>
+			</tr>
+			<tr id="dep44">
+				<th headers="reg15nom">Loire-Atlantique</th>
+				<td headers="reg15t4">8,1</td>
+				<td headers="reg15t3">7,9</td>
+				<td headers="reg15t2">8,2</td>
+				<td headers="reg15t1">7,8</td>
+			</tr>
+			<tr id="dep49">
+				<th headers="reg15nom">Maine-et-Loire</th>
+				<td headers="reg15t4">8,2</td>
+				<td headers="reg15t3">8,2</td>
+				<td headers="reg15t2">8,3</td>
+				<td headers="reg15t1">8,1</td>
+			</tr>
+			<tr id="dep53">
+				<th headers="reg15nom">Mayenne</th>
+				<td headers="reg15t4">6</td>
+				<td headers="reg15t3">5,8</td>
+				<td headers="reg15t2">6,1</td>
+				<td headers="reg15t1">5,7</td>
+			</tr>
+			<tr class="region-reference" id="reg15ref">
+				<th headers="reg15nom">Nord Pas de Calais</th>
+				<td headers="reg15t4">8</td>
+				<td headers="reg15t3">7,9</td>
+				<td headers="reg15t2">7,9</td>
+				<td headers="reg15t1">8</td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="reg5">
+		<caption>Centre</caption>
+		<thead>
+			<tr>
+				<th id="reg5nom">Nom</th>
+				<th id="reg5t4">2016</th>
+				<th id="reg5t3">2015</th>
+				<th id="reg5t2">2014</th>
+				<th id="reg5t1">2013</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="dep18">
+				<th headers="reg5nom">Cher</th>
+				<td headers="reg5t4">9,2</td>
+				<td headers="reg5t3">9,4</td>
+				<td headers="reg5t2">9,3</td>
+				<td headers="reg5t1">9,3</td>
+			</tr>
+			<tr id="dep28">
+				<th headers="reg5nom">Eure-et-Loir</th>
+				<td headers="reg5t4">8,8</td>
+				<td headers="reg5t3">8,8</td>
+				<td headers="reg5t2">8,9</td>
+				<td headers="reg5t1">8,7</td>
+			</tr>
+			<tr id="dep36">
+				<th headers="reg5nom">Indre</th>
+				<td headers="reg5t4">7,8</td>
+				<td headers="reg5t3">7,9</td>
+				<td headers="reg5t2">7,7</td>
+				<td headers="reg5t1">8</td>
+			</tr>
+			<tr id="dep37">
+				<th headers="reg5nom">Indre-et-Loire</th>
+				<td headers="reg5t4">8,2</td>
+				<td headers="reg5t3">8,2</td>
+				<td headers="reg5t2">8,3</td>
+				<td headers="reg5t1">8,1</td>
+			</tr>
+			<tr id="dep45">
+				<th headers="reg5nom">Loiret</th>
+				<td headers="reg5t4">8,6</td>
+				<td headers="reg5t3">8,6</td>
+				<td headers="reg5t2">8,7</td>
+				<td headers="reg5t1">8,5</td>
+			</tr>
+			<tr id="dep41">
+				<th headers="reg5nom">Loir-et-Cher</th>
+				<td headers="reg5t4">7,9</td>
+				<td headers="reg5t3">7,9</td>
+				<td headers="reg5t2">8</td>
+				<td headers="reg5t1">7,8</td>
+			</tr>
+			<tr id="dep8">
+				<th headers="reg5nom">Ardennes</th>
+				<td headers="reg5t4">11,3</td>
+				<td headers="reg5t3">11</td>
+				<td headers="reg5t2">11,2</td>
+				<td headers="reg5t1">11,1</td>
+			</tr>
+			<tr id="dep10">
+				<th headers="reg5nom">Aube</th>
+				<td headers="reg5t4">9,9</td>
+				<td headers="reg5t3">10,1</td>
+				<td headers="reg5t2">9,8</td>
+				<td headers="reg5t1">10,2</td>
+			</tr>
+			<tr class="region-reference" id="reg5ref">
+				<th headers="reg5nom">Centre</th>
+				<td headers="reg5t4">9,4</td>
+				<td headers="reg5t3">9,4</td>
+				<td headers="reg5t2">9,3</td>
+				<td headers="reg5t1">9,5</td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="reg21">
+		<caption>Lorraine</caption>
+		<thead>
+			<tr>
+				<th id="reg13nom">Nom</th>
+				<th id="reg13t4">2016</th>
+				<th id="reg13t3">2015</th>
+				<th id="reg13t2">2014</th>
+				<th id="reg13t1">2013</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="dep54">
+				<th headers="reg13nom">Meurthe-et-Moselle</th>
+				<td headers="reg13t4">9,6</td>
+				<td headers="reg13t3">9,6</td>
+				<td headers="reg13t2">9,5</td>
+				<td headers="reg13t1">9,7</td>
+			</tr>
+			<tr id="dep55">
+				<th headers="reg13nom">Meuse</th>
+				<td headers="reg13t4">10,5</td>
+				<td headers="reg13t3">10,3</td>
+				<td headers="reg13t2">10,6</td>
+				<td headers="reg13t1">10,2</td>
+			</tr>
+			<tr id="dep57">
+				<th headers="reg13nom">Moselle</th>
+				<td headers="reg13t4">9,9</td>
+				<td headers="reg13t3">9,8</td>
+				<td headers="reg13t2">10</td>
+				<td headers="reg13t1">9,7</td>
+			</tr>
+			<tr id="dep88">
+				<th headers="reg13nom">Vosges</th>
+				<td headers="reg13t4">10,3</td>
+				<td headers="reg13t3">10,3</td>
+				<td headers="reg13t2">10,2</td>
+				<td headers="reg13t1">10,4</td>
+			</tr>
+			<tr id="dep9">
+				<th headers="reg13nom">Ariège</th>
+				<td headers="reg13t4">10,9</td>
+				<td headers="reg13t3">10,8</td>
+				<td headers="reg13t2">11</td>
+				<td headers="reg13t1">10,7</td>
+			</tr>
+			<tr id="dep12">
+				<th headers="reg13nom">Aveyron</th>
+				<td headers="reg13t4">6,4</td>
+				<td headers="reg13t3">6,4</td>
+				<td headers="reg13t2">6,5</td>
+				<td headers="reg13t1">6,3</td>
+			</tr>
+			<tr id="dep32">
+				<th headers="reg13nom">Gers</th>
+				<td headers="reg13t4">6,8</td>
+				<td headers="reg13t3">6,7</td>
+				<td headers="reg13t2">6,7</td>
+				<td headers="reg13t1">6,8</td>
+			</tr>
+			<tr id="dep31">
+				<th headers="reg13nom">Haute-Garonne</th>
+				<td headers="reg13t4">9,5</td>
+				<td headers="reg13t3">9,5</td>
+				<td headers="reg13t2">9,6</td>
+				<td headers="reg13t1">9,4</td>
+			</tr>
+			<tr id="dep65">
+				<th headers="reg13nom">Hautes-Pyrénées</th>
+				<td headers="reg13t4">9,8</td>
+				<td headers="reg13t3">10,1</td>
+				<td headers="reg13t2">9,9</td>
+				<td headers="reg13t1">10</td>
+			</tr>
+			<tr id="dep46">
+				<th headers="reg13nom">Lot</th>
+				<td headers="reg13t4">8,4</td>
+				<td headers="reg13t3">8,6</td>
+				<td headers="reg13t2">8,3</td>
+				<td headers="reg13t1">8,7</td>
+			</tr>
+			<tr class="region-reference" id="reg13ref">
+				<th headers="reg13nom">Lorraine</th>
+				<td headers="reg13t4">8,6</td>
+				<td headers="reg13t3">8,7</td>
+				<td headers="reg13t2">8,5</td>
+				<td headers="reg13t1">8,8</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	
+	<div id="enonce">
+		<h2>Consignes</h2>
+		<p>Travailler uniquement dans le fichier « tp5.js ». NE PAS MODIFIER LES FICHIERS HTML ET CSS.</p>
+		<h2>Exemple</h2>
+		<p>Classe "active" sur les items qui sont cliqués dans le menu des onglets</p>
+		<h2>Questions</h2>
+		<h3>1 - onglets</h3>
+		<p>
+			 Cacher les tableaux.
+		</p>
+		<p> Quand on clique sur un onglet, le tableau lié apparaît et les autres tableaux disparaissent.</p>
+		<h3>2 - loupe</h3>
+		<p>
+			Dans le conteneur <code>div#conteneur</code>, ajouter l'élément 
+			 <code>&lt;div id="loupe"&gt;&lt;/div&gt;</code>.
+		</p>
+		<p>Masqué par défaut, cet élément apparaît quand on survole une cellule. Il affiche alors le contenu de la cellule.</p>
+		<h3>3 - aide à la lecture</h3>
+		<p>Quand une cellule est survolée, les cellules de la même ligne et de la même colonne prennent la classe <code>on</code>. La cellule survolée prend la classe <code>active</code>.</p>
+		<h2>Astuce</h2>
+		<p><code>$cible.css("display","none")</code> cache un élément et <code>$cible.css("display","block")</code> le remontre (pour un élément de type bloc).</p>
+		<p><code>$collection.filter("#id")</code> permet de sélectionner un élément dans une collection </p>
+		<p><code>parents(), find(), addClass(), removeClass(), show(), hide()</code> sont des fonctions jQuery qui pourraient vous intéresser pour cet exercice </p>
+		<p>On retrouve les cellules d'une même colonne gr&acirc;ce &agrave; leur attribut <code>headers</code>. En effet, sa valeur est l'identifiant de la tête de la colonne.</p>
+		<h2>Compte Rendu de TP</h2>
+		<p> Dossier à rendre sous Moodle (en PDF UNIQUEMENT) :
+			<ul>
+				<li> Résumant votre TP en précisant :
+					<ul>
+						<li>la réponse aux différentes questions</li>
+						<li>les extraits de code "pertinants"</li>
+						<li>les captures d'écran "pertinantes"</li>
+					</ul>
+				</li>
+				<li>Terminé par un chapitre "conclusion"
+					<ul><li>qui listera les notions à retenir</li></ul>
+				</li>
+			</ul>
+		</p>
+	</div>
+</div>
+</body>
+</html>

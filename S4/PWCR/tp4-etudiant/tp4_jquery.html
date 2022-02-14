@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>TP JQuery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+    <style type="text/css">
+      .lig0 {
+        background-color: #88ff88;
+      }
+      .lig1 {
+        background-color: #88cc88;
+      }
+	  .turn {
+		  transform: rotate(0.5turn);
+	  }
+    </style>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("h2").css("color", "green")
+			$("table tr:nth-child(2)").css("background-color", "red")
+			$("p:odd").addClass("lig0").css("width", "640px")
+			$("p:even").addClass("lig1")
+			$("img").hover(function(){$(this).addClass("turn")},
+			               function(){$(this).removeClass("turn")})
+
+			$("a").click(function(){$(this).remove()})
+
+			$("p").click(function(){
+				let color = $(this).css("color")
+				switch (color){
+					case "rgb(255, 0, 0)":
+						$(this).css("color", "blue")
+						break
+					case "rgb(0, 0, 255)":
+						$(this).css("color", "black")
+						break
+					case "rgb(0, 0, 0)":
+						$(this).css("color", "red")
+						break
+				}
+			})
+		})
+	</script>
+  </head>
+
+  <body style="font-family: Arial, Helvetica, sans-serif">
+    <h1>Pagum Ipsum</h1>
+	<img src="javascript-logo.png" alt="">
+    <p>
+      Le Lorem Ipsum est simplement du faux texte employ� dans la composition et
+      la mise en page avant impression. Le Lorem Ipsum est le faux texte
+      standard de l'imprimerie
+      <a class="ok" href="#"
+        >depuis les ann�es 1500, quand un peintre anonyme</a
+      >
+      assembla ensemble des morceaux de texte pour r�aliser un livre sp�cimen de
+      polices de texte. Il n'a pas fait que survivre cinq si�cles, mais s'est
+      aussi adapt� � la bureautique informatique, sans que son contenu n'en soit
+      modifi�.
+      <a class="ok" href="#">Il a �t� popularis� dans les ann�es 1960</a> gr�ce
+      � la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et,
+      plus r�cemment, par son inclusion dans des applications de mise en page de
+      texte, comme Aldus PageMaker.
+    </p>
+
+    <h2>Les lettres forment des mots</h2>
+    <p>
+      On sait depuis longtemps que travailler avec du texte lisible et contenant
+      du sens est source de distractions, et emp�che de se concentrer sur la
+      mise en page elle-m�me. L'avantage du Lorem Ipsum sur un texte g�n�rique
+      comme 'Du texte. Du texte. Du texte.' est qu'il poss�de une distribution
+      de lettres plus ou moins normale, et en tout cas
+      <a href="#">comparable avec celle du fran�ais standard</a>. De nombreuses
+      suites logicielles de mise en page ou �diteurs de sites Web ont fait du
+      Lorem Ipsum leur faux texte par d�faut, et une recherche pour 'Lorem
+      Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'�
+      <a href="#">leur phase de construction</a>. Plusieurs versions sont
+      apparues avec le temps, parfois par accident, souvent intentionnellement
+      (histoire d'y rajouter de petits clins d'oeil, voire des phrases
+      embarassantes).
+    </p>
+
+    <h2>Les mots sont dans les phrases</h2>
+    <p>
+      Contrairement � une opinion r�pandue, le Lorem Ipsum n'est pas simplement
+      du texte al�atoire. Il trouve ses racines dans une oeuvre de la
+      litt�rature latine classique datant de 45 av. J.-C., le rendant vieux de
+      2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est
+      int�ress� � un des mots latins les plus obscurs, consectetur, extrait d'un
+      passage du Lorem Ipsum, et en �tudiant tous les usages de ce mot dans la
+      litt�rature classique, d�couvrit la source incontestable du Lorem Ipsum.
+      <a href="#">Il provient en fait des sections</a> 1.10.32 et 1.10.33 du "De
+      Finibus Bonorum et Malorum" (Des Supr�mes Biens et des Supr�mes Maux) de
+      Cic�ron. Cet ouvrage, tr�s populaire pendant la Renaissance, est un trait�
+      sur la th�orie de l'�thique. Les premi�res lignes du Lorem Ipsum, "Lorem
+      ipsum dolor sit amet...", proviennent de la section 1.10.32.
+    </p>
+
+    <p>
+      L'extrait standard de Lorem Ipsum utilis� depuis le XVI� si�cle est
+      reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du
+      "De Finibus Bonorum et Malorum" de Cic�ron sont aussi reproduites dans
+      leur version originale, accompagn�e de la traduction anglaise de H.
+      Rackham (1914).
+    </p>
+
+    <p>
+      Plusieurs variations de Lorem Ipsum peuvent �tre trouv�es ici ou l�, mais
+      la majeure partie d'entre elles a �t� alt�r�e par l'addition d'humour ou
+      de mots al�atoires qui ne ressemblent
+      <a href="#">pas une seconde � du texte</a> standard. Si vous voulez
+      utiliser un passage du Lorem Ipsum, vous devez �tre s�r qu'il n'y a rien
+      d'embarrassant cach� dans le texte. Tous les g�n�rateurs de Lorem Ipsum
+      sur Internet tendent � reproduire le m�me extrait sans fin, ce qui fait de
+      lipsum.com le seul vrai g�n�rateur de Lorem Ipsum.
+      <a href="#">Iil utilise un dictionnaire</a> de plus de 200 mots latins, en
+      combinaison de plusieurs structures de phrases, pour g�n�rer un Lorem
+      Ipsum irr�prochable. Le Lorem Ipsum ainsi obtenu ne contient aucune
+      r�p�tition, ni ne contient des mots farfelus, ou des touches d'humour.
+      paragraphes mots caract�res listes Commencez par "Lorem ipsum dolor sit
+      amet..."
+    </p>
+
+    <hr />
+    <h3>Le tableau ci-dessous ne doit pas �tre modifi� en JQuery</h3>
+    <table id="leTableau" border="1" cellspacing="0">
+      <tr>
+        <td>il</td>
+        <td>ne</td>
+        <td>faut</td>
+        <td>pas</td>
+      </tr>
+      <tr>
+        <td>modifier</td>
+        <td>ce</td>
+        <td>tableau</td>
+        <td>.</td>
+      </tr>
+      <tr>
+        <td colspan="4"><i>M�me si sa mise en forme ne vous plait pas.</i></td>
+      </tr>
+    </table>
+    <hr />
+
+    <h3>Le tableau ci-dessous est � modifier en JQuery</h3>
+    <table id="tableauAModifier" border="1" cellspacing="0">
+      <tr>
+        <td>111</td>
+        <td>222</td>
+        <td>333</td>
+      </tr>
+      <tr>
+        <td>un</td>
+        <td>deux</td>
+        <td>trois</td>
+      </tr>
+      <tr>
+        <td>One</td>
+        <td>Two</td>
+        <td>Three</td>
+      </tr>
+      <tr>
+        <td>I</td>
+        <td>II</td>
+        <td>III</td>
+      </tr>
+      <tr>
+        <td>un</td>
+        <td>exercice pas</td>
+        <td>vraiment tr�s compliqu�</td>
+      </tr>
+      <tr>
+        <td>Vlan</td>
+        <td>Flic flac</td>
+        <td>Pim pam poom</td>
+      </tr>
+    </table>
+
+    <hr />
+    <p>
+      <a href="http://validator.w3.org/check?uri=referer">
+        <img
+          src="http://www.w3.org/Icons/valid-html401"
+          border="0"
+          alt="Valid HTML 4.01 Transitional"
+          height="31"
+          width="88"
+        />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img
+          style="border: 0; width: 88px; height: 31px"
+          src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+          alt="CSS Valide !"
+        />
+      </a>
+    </p>
+  </body>
+</html>
