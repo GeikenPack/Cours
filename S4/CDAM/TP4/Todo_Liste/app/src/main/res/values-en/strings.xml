@@ -1,0 +1,31 @@
+<resources>
+    <!--Main Activity -->
+    <string name="app_name">Todo List</string>
+    <string name="listeText">Existing Todos List</string>
+    <string name="listview_menu_show_text">Show todo</string>
+    <string name="listview_menu_modify_text">Modify todo</string>
+    <string name="listview_menu_remove_text">Delete todo</string>
+    <string name="main_menu_ajouter_todo_text">Add todo</string>
+    <string name="dateBut_ma">BY DATE</string>
+    <string name="titreBut_ma">BY TITLE</string>
+    <string name="idBut_ma">BY ID</string>
+
+    <!--AfficheurTodo -->
+    <string name="tv_titre_text">Title :</string>
+    <string name="tv_note_text">"Todo : "</string>
+    <string name="tv_correspondant_text">Linked with :</string>
+    <string name="tv_pour_text">Dur to :</string>
+    <string name="aff_but_quit_text">Quit</string>
+
+    <!--EditeurTodo -->
+    <string name="okBut">Ok</string>
+    <string name="annBut">Cancel</string>
+    <string name="titreText">Title :</string>
+    <string name="titreChamp">Enter title ...</string>
+    <string name="todoText">Todo :</string>
+    <string name="todoChamp">Enter todo ...</string>
+    <string name="dateText">Due to :</string>
+    <string name="lienText">Linked with :</string>
+    <string name="nomChamps">Person name ...</string>
+    <string name="commChamp">Comment ...</string>
+</resources>

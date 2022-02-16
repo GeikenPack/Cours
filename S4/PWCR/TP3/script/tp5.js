@@ -3,7 +3,9 @@
 */
 
 // Au chargement de la page 
+
 $(document).ready(function(){
+	$('table').css("display", "none");
 		/*
 			EXEMPLE 
 			Classe "active" sur les items cliqu�s dans le menu par onglet
@@ -28,6 +30,28 @@ $(document).ready(function(){
 			<div id="loupe"></div>
 			Masqu� par d�faut, cet �l�ment appara�t quand on survole une cellule. Il affiche alors le contenu de la cellule.		
 		*/
+			$conteneur = $('#conteneur')
+			$conteneur.append("<div id='loupe'></div>")
+
+			$loupe = $("#loupe")
+			$cellule = $('td')
+			$cellule.mouseover(function() {
+				$loupe.text($(this).html())
+				$colonne = $(this).attr('headers')
+				$('td[headers=' + $colonne + ']').addClass('on');
+				$idLigne = $(this).closest('tr').attr('id')
+				$('#' + $idLigne + ' td').addClass('on')
+				$(this).addClass('active')
+			})
+
+			$cellule.mouseleave(function() {
+				$loupe.text('')
+				$colonne = $(this).attr('headers')
+				$('td[headers=' + $colonne + ']').removeClass('on');
+				$idLigne = $(this).closest('tr').attr('id')
+				$('#' + $idLigne + ' td').removeClass('on')
+				$(this).removeClass('active')
+			})
 			
 		/*
 			EXERCICE 3
@@ -38,4 +62,5 @@ $(document).ready(function(){
 			En effet, sa valeur est l'identifiant de la t�te de la colonne.
 			Si vous ne l'avez pas fait avant, regardez �galement la documentation de parents(), find() et filter()
 		*/	
+
 });	// Fin des instructions envoy�es au chargement de la page

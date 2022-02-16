@@ -1,0 +1,31 @@
+<resources>
+    <!--Main Activity -->
+    <string name="app_name">Todo List</string>
+    <string name="listeText">Liste des Todos existants</string>
+    <string name="listview_menu_show_text">Afficher le todo</string>
+    <string name="listview_menu_modify_text">Modifier le todo</string>
+    <string name="listview_menu_remove_text">Supprimer le todo</string>
+    <string name="main_menu_ajouter_todo_text">Ajouter un todo</string>
+    <string name="dateBut_ma">PAR DATE</string>
+    <string name="titreBut_ma">PAR TITRE</string>
+    <string name="idBut_ma">PAR ID</string>
+
+    <!--AfficheurTodo -->
+    <string name="tv_titre_text">Titre :</string>
+    <string name="tv_note_text">"Todo : "</string>
+    <string name="tv_correspondant_text">En lien avec :</string>
+    <string name="tv_pour_text">Pour le :</string>
+    <string name="aff_but_quit_text">Quitter</string>
+
+    <!--EditeurTodo -->
+    <string name="okBut">Ok</string>
+    <string name="annBut">Annuler</string>
+    <string name="titreText">Titre :</string>
+    <string name="titreChamp">Entre le titre ...</string>
+    <string name="todoText">Todo :</string>
+    <string name="todoChamp">Entre votre todo ...</string>
+    <string name="dateText">Pour le :</string>
+    <string name="lienText">En lien avec :</string>
+    <string name="nomChamps">Nom de personne ...</string>
+    <string name="commChamp">Commentaire ...</string>
+</resources>

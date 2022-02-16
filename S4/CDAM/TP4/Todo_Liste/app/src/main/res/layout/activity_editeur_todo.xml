@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" tools:context=".MainActivity">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/darker_gray"
+            android:onClick="afficherMessage"
+            android:text="@string/okBut" />
+
+        <Button
+            android:id="@+id/button_annuler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/darker_gray"
+            android:onClick="clickAnnuler"
+            android:text="@string/annBut" />
+    </LinearLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:scrollbars="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:id="@+id/titreText" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/titreText"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/titreChamp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/titreChamp"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/titre_shown_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/todoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/todoText" />
+
+                <FrameLayout
+                    android:layout_width="371dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_toEndOf="@+id/todoText">
+
+                    <EditText
+                        android:id="@+id/todoChamp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:ems="10"
+                        android:hint="@string/todoChamp"
+                        android:inputType="textMultiLine|textPersonName"
+                        android:lines="5" />
+
+                    <TextView
+                        android:id="@+id/todo_shown_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="invisible" />
+                </FrameLayout>
+
+            </RelativeLayout>
+
+            <TextView android:id="@+id/pourText" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/dateText"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <DatePicker
+                    android:id="@+id/datePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner" />
+
+                <DatePicker
+                    android:id="@+id/datePicker_shown"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <TextView android:id="@+id/lienText" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lienText"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/NomPersonneChamp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/nomChamps"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/NomPersonneText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/CommentaireChamp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/commChamp"
+                    android:lines="10" />
+
+                <TextView
+                    android:id="@+id/CommentaireText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

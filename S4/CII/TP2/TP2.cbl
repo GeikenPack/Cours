@@ -58,11 +58,10 @@
                END-IF
            END-PERFORM.
            EXIT.
-       
+
        CALC-JOURS-NAISSANCE.
            IF ANNEESAISIE <> ANNEESYS THEN
-               IF ANNEESAISIE <> ANNEESYS - 1
-               AND MOISSAISIE < MOISSYS THEN
+               IF ANNEESAISIE < ANNEESYS - 1 THEN
                    COMPUTE JOURSTEMP = ( ( ANNEESYS - 1 )
                    - ( ANNEESAISIE + 1))
                    COMPUTE JOURSTEMP = JOURSTEMP * 365
@@ -80,7 +79,7 @@
                    COMPUTE MOISACTUEL = MOISACTUEL + 1
                END-PERFORM
                COMPUTE NBJOURS = NBJOURS + JOURSYS
-               
+
                COMPUTE NBJOURS = NBJOURS + JOURSTEMP
            ELSE
               IF MOISSAISIE = MOISSYS THEN
@@ -96,15 +95,15 @@
                    END-PERFORM
               END-IF
            END-IF.
-           
+
            DISPLAY "Jours depuis naissance : " NBJOURS.
            EXIT.
-       
+
        CALC-AGE.
            COMPUTE AGE = NBJOURS / 365.
            DISPLAY " Age : " AGE.
            EXIT.
-        
+
        DISPLAY-MSG-AGE.
            EVALUATE AGE
                WHEN 0 THRU 1 DISPLAY "Baby"
