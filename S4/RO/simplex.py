@@ -6,7 +6,7 @@ z = []
 for i in range(nbMateriaux):
     prixProduit.append(input("Prix du produit " + str(i) + " : "))
     coefZ.append(0)
-    z.append(int(input("Materiau " + i + " pour z")))
+    z.append(int(input("Materiau " + str(i) + " pour z")))
 
 matrice = []
 Bi = []
