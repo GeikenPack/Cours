@@ -28,7 +28,7 @@ $(document).ready(function(){
 			EXERCICE 2
 			Dans le conteneur (�div#conteneur�), ajouter l'�l�ment suivant :
 			<div id="loupe"></div>
-			Masqu� par d�faut, cet �l�ment appara�t quand on survole une cellule. Il affiche alors le contenu de la cellule.		
+			Masqu� par d�faut, cet �l�ment appara�t quand on survole une cellule. Il affiche alors le contenu de la cellule.
 		*/
 			$conteneur = $('#conteneur')
 			$conteneur.append("<div id='loupe'></div>")

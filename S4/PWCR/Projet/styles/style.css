@@ -1,0 +1,31 @@
+body {
+    display: flex;
+}
+
+.cartes, .carteBanque {
+    border: 1px solid black;
+}
+
+.joueur, .croupier {
+    border: 1px solid black;
+    margin: 10px 10px;
+}
+
+.mise, h2 {
+    text-align: center;
+}
+
+.boutonsJoueurs {
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#joueurs {
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    padding: 5px;
+}

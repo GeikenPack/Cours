@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+
+.Affichage {
+    display: flex;
+    justify-content: center;
+}
+
+#score, #nbcoups {
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
