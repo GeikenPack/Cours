@@ -2,4 +2,7 @@
     <string name="app_name">Blagnac Race</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="cible"></string>
+    <string name="serveur">Adresse du serveur de la course</string>
+    <string name="adresse">cdam.alwaysdata.net/BR</string>
+    <string name="nom">Nom de participant</string>
 </resources>

@@ -10,6 +10,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -20,6 +21,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
 
 import fr.blagnac.race.databinding.ActivityMapsBinding;
 
@@ -32,12 +35,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Location cibleLoc;
     private Marker myMarker;
     private Marker cibleMarker;
-
+    private String adresse_serveur;
+    private String monNom;
+    private Boolean courseFinie=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
@@ -73,7 +79,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setZoomGesturesEnabled(true); // autorise le zoom tactile
         mMap.getUiSettings().setCompassEnabled(false); // n'affiche pas le compas
         mMap.getUiSettings().setMyLocationButtonEnabled(true); // affiche le bouton de localisation
-        String cibleDesc = "IUT de Blagnac"; // description de la cible
+        String cibleDesc = "Inconnue"; // description de la cible
         double cibleLat = 43.6489983; // coordonnées (latitude, longitude)
         double cibleLon = 1.3749359; // de l’IUT de Blagnac
         cibleLoc = new Location("Cible") ;
@@ -91,6 +97,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .position(new LatLng(cibleLat,cibleLon))
                 .icon(BitmapDescriptorFactory
                         .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)) );
+        new RejoindreCourse(this).show();
     }
 
     @Override // méthode appelée quand une source de localisation est activée
@@ -109,18 +116,43 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override // méthode appelée quand les coordonnées GPS du smartphone changent
     public void onLocationChanged(final Location myLoc) {
-// Récupération des cordonnées (latitude, longitude) et création d’un objet
-// myPos de la classe LatLng représentant cette position
+        RequeteHTTP requeteServeur = new RequeteHTTP(adresse_serveur);
+        // Récupération des cordonnées (latitude, longitude) et création d’un objet
+        // myPos de la classe LatLng représentant cette position
         final LatLng myPos = new LatLng(myLoc.getLatitude(), myLoc.getLongitude());
-// Centrage de la carte sur la position GPS obtenue
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myPos, 15));
         myMarker.setPosition(myPos);
         double distance = myLoc.distanceTo(cibleLoc);
         myMarker.setSnippet("à "+ Math.round(distance) + " m de la cible");
         myMarker.showInfoWindow();
-        if (distance < 30.0) {
-            this.showAlert("Bravo !!", "Vous avez atteint la cible");
-            this.desabonnementGPS();
+        try {
+            requeteServeur.doGET("cmd=setPosition&name="+monNom+"&lat="+myPos.latitude+"&lon="+myPos.longitude);
+            if (distance < 30.0) {
+                String numCible = requeteServeur.doGET("cmd=setGoalReached&name="+monNom);
+                if (numCible.equals("3")){
+                    this.showAlert("Gagné !!", "Vous avez atteint la derniere cible");
+                    this.desabonnementGPS();
+                }
+                else {
+                    this.showAlert("Bravo !!", "Vous avez atteint la cible");
+                    String reponse = requeteServeur.doGET("cmd=getGoal&name=" + monNom);
+                    String[] cible = reponse.split(",");
+
+                    this.getCibleTv().setText("Cible  : "+cible[0]);
+                    this.getCibleLoc().setLatitude(Float.parseFloat(cible[1]));
+                    this.getCibleLoc().setLongitude(Float.parseFloat(cible[2]));
+                    this.getCibleMarker().setPosition(new LatLng(this.getCibleLoc().getLatitude(), this.getCibleLoc().getLongitude()));
+
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myPos, 15));
+                    myMarker.setPosition(myPos);
+                    distance = myLoc.distanceTo(cibleLoc);
+                    myMarker.setSnippet("à "+ Math.round(distance) + " m de la cible");
+                    myMarker.showInfoWindow();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -169,5 +201,85 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 });
         AlertDialog AD = ADBuilder.create();
         AD.show();
+    }
+
+    public GoogleMap getmMap() {
+        return mMap;
+    }
+
+    public void setmMap(GoogleMap mMap) {
+        this.mMap = mMap;
+    }
+
+    public LocationManager getLocationManager() {
+        return locationManager;
+    }
+
+    public void setLocationManager(LocationManager locationManager) {
+        this.locationManager = locationManager;
+    }
+
+    public ActivityMapsBinding getBinding() {
+        return binding;
+    }
+
+    public void setBinding(ActivityMapsBinding binding) {
+        this.binding = binding;
+    }
+
+    public TextView getCibleTv() {
+        return cibleTv;
+    }
+
+    public void setCibleTv(TextView cibleTv) {
+        this.cibleTv = cibleTv;
+    }
+
+    public Location getCibleLoc() {
+        return cibleLoc;
+    }
+
+    public void setCibleLoc(Location cibleLoc) {
+        this.cibleLoc = cibleLoc;
+    }
+
+    public Marker getMyMarker() {
+        return myMarker;
+    }
+
+    public void setMyMarker(Marker myMarker) {
+        this.myMarker = myMarker;
+    }
+
+    public Marker getCibleMarker() {
+        return cibleMarker;
+    }
+
+    public void setCibleMarker(Marker cibleMarker) {
+        this.cibleMarker = cibleMarker;
+    }
+
+    public String getAdresse_serveur() {
+        return adresse_serveur;
+    }
+
+    public void setAdresse_serveur(String adresse_serveur) {
+        this.adresse_serveur = adresse_serveur;
+    }
+
+    public String getMonNom() {
+        return monNom;
+    }
+
+    public void setMonNom(String monNom) {
+        this.monNom = monNom;
+    }
+
+    public Boolean getCourseFinie() {
+        return courseFinie;
+    }
+
+    public void setCourseFinie(Boolean courseFinie) {
+        this.courseFinie = courseFinie;
     }
 }

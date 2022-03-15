@@ -1,9 +1,16 @@
 body {
-    display: flex;
+    background-color: rgb(1, 77, 1);
+    
+}
+
+.jeu {
+    width: 100%;
 }
 
 .cartes, .carteBanque {
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
 }
 
 .joueur, .croupier {
@@ -11,7 +18,7 @@ body {
     margin: 10px 10px;
 }
 
-.mise, h2 {
+.mise, h2, .score {
     text-align: center;
 }
 

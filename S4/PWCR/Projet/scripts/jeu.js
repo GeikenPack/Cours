@@ -1,10 +1,9 @@
 let nbJoueurs = 2
 const blackBot = new BlackBot(nbJoueurs)
 
-const defCroupierHtml = '<div class="croupier">' +
-                        '<h2 class="nomCroupier">Croupier</h2>' +
+const defCroupierHtml = '<h2 class="nomCroupier">Croupier</h2>' +
                         '<div class="carteBanque cartes"></div>' +
-                        '</div>';
+                        '<div class="score scoreCroupier"></div>'
 
 
 $('document').ready(function() {
@@ -18,6 +17,7 @@ $('document').ready(function() {
         $zoneJoueurs.append('<div class="joueur">' +
                             '<h2 class="nomJoueur">Joueur '+i+'</h2>' +
                             '<div class="cartes'+i+' cartes"></div>' +
+                            '<div class="score scoreJoueur'+i+'"></div>' +
                             '<div class="mise miseJoueur'+i+'">'+blackBot.miseJoueurs[i]+'</div>' +
                             '<div class="boutonsJoueurs">' +
                                 '<button class="miser'+i+'">Miser</button>' +
@@ -61,7 +61,8 @@ $('document').ready(function() {
     function actualiserJoueurs() {
         for (let i = 0; i < nbJoueurs; i++) {
             actualiserCartesJoueur(i)
-            $('.miseJoueur'+i).html(blackBot.miseJoueurs[i])
+            $('.miseJoueur'+i).html("Mise : " + blackBot.miseJoueurs[i])
+            $('.scoreJoueur'+i).html("Score : " + blackBot.mainJoueurs[i].getScore())
             if (blackBot.etat === EtatBlackBot.GAIN) {
                 $('.miser'+i).attr('disabled', 'disabled')
                 $('.tirer'+i).attr('disabled', 'disabled')
@@ -69,6 +70,7 @@ $('document').ready(function() {
             }
         }
         actualiserCartesBanque()
+        $('.scoreCroupier').text("Score : " + blackBot.mainBanque.getScore())
         if (blackBot.etat === EtatBlackBot.GAIN) {
             $('.recommencer').removeAttr('disabled')
         } else {
@@ -78,9 +80,15 @@ $('document').ready(function() {
 
     function passageJeu(){
         for (let i = 0; i < nbJoueurs; i++) {
-            $('.miser'+i).attr('disabled', 'disabled')
-            $('.tirer'+i).attr('disabled',false)
-            $('.stop'+i).removeAttr('disabled')
+            if (blackBot.miseJoueurs[i] > 0){
+                $('.miser'+i).attr('disabled', 'disabled')
+                $('.tirer'+i).attr('disabled',false)
+                $('.stop'+i).removeAttr('disabled')
+            } else {
+                $('.miser'+i).attr('disabled', 'disabled')
+                $('.tirer'+i).attr('disabled', 'disabled')
+                $('.stop'+i).attr('disabled', 'disabled')
+            }
         }
         $('.tirage').attr('disabled', 'disabled')
     }
@@ -95,6 +103,7 @@ $('document').ready(function() {
     }
 
     function actualiserCartesJoueur(indJoueur){
+        $('.cartes'+indJoueur).empty()
         for (let i = 0; i < blackBot.mainJoueurs[indJoueur].getNbCartes(); i++){
             let carteAct = blackBot.mainJoueurs[indJoueur].cartes[i]
             $(".cartes"+indJoueur).append('<img src="resources/Cartes/' + NomCarte[carteAct.hauteur]+'_'+CouleurCarte[carteAct.couleur]+'.png" width="100" height="200"></img>')
@@ -102,6 +111,7 @@ $('document').ready(function() {
     }
 
     function actualiserCartesBanque(){
+        $(".carteBanque").empty()
         for (let i = 0; i < blackBot.mainBanque.getNbCartes(); i++){
             let carteAct = blackBot.mainBanque.cartes[i]
             $(".carteBanque").append('<img src="resources/Cartes/' + NomCarte[carteAct.hauteur]+'_'+CouleurCarte[carteAct.couleur]+'.png" width="100" height="200"></img>')

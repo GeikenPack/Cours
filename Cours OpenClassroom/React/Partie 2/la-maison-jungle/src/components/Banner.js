@@ -3,6 +3,8 @@ import logo from '../assets/logo.png'
 
 function Banner() {
     const title = "La maison jungle"
+    console.log({logo})
+
     return (
         <div className="lmj-banner">
             <img src={logo} alt='La maison jungle' className='lmj-logo' />
