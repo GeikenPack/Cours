@@ -1,5 +1,6 @@
 package fr.blagnac.race;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import androidx.appcompat.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,10 +25,11 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 import fr.blagnac.race.databinding.ActivityMapsBinding;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
     private LocationManager locationManager;
@@ -38,6 +41,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String adresse_serveur;
     private String monNom;
     private Boolean courseFinie=false;
+    private TimerRace timerRace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +101,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .position(new LatLng(cibleLat,cibleLon))
                 .icon(BitmapDescriptorFactory
                         .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)) );
+        desabonnementGPS();
+        timerRace = new TimerRace(this, 86400000, 5000);
         new RejoindreCourse(this).show();
     }
 
@@ -116,7 +122,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override // méthode appelée quand les coordonnées GPS du smartphone changent
     public void onLocationChanged(final Location myLoc) {
+        if (this.adresse_serveur == null) {return;}
         RequeteHTTP requeteServeur = new RequeteHTTP(adresse_serveur);
+        String message;
+        try {
+            do {
+                message = requeteServeur.doGET("cmd=getMessage&name="+monNom);
+                if (message.equals("Perdu")) {
+                    courseFinie = true;
+                    Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                }
+            } while(!message.equals("None"));
+            if (courseFinie) {
+                String gagnant = requeteServeur.doGET("cmd=getWinner");
+                showAlert("Perdu !!", gagnant+"a atteint la dernière cible");
+                this.desabonnementGPS();
+                timerRace.cancel();
+                requeteServeur.doGET("cmd=removeParticipant&name="+monNom);
+                return;
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         // Récupération des cordonnées (latitude, longitude) et création d’un objet
         // myPos de la classe LatLng représentant cette position
         final LatLng myPos = new LatLng(myLoc.getLatitude(), myLoc.getLongitude());
@@ -129,10 +158,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         try {
             requeteServeur.doGET("cmd=setPosition&name="+monNom+"&lat="+myPos.latitude+"&lon="+myPos.longitude);
             if (distance < 30.0) {
+                String messageAdversaire;
                 String numCible = requeteServeur.doGET("cmd=setGoalReached&name="+monNom);
                 if (numCible.equals("3")){
                     this.showAlert("Gagné !!", "Vous avez atteint la derniere cible");
                     this.desabonnementGPS();
+                    timerRace.cancel();
+                    messageAdversaire = "Perdu";
+                    requeteServeur.doGET("cmd=removeParticipant&name="+monNom);
                 }
                 else {
                     this.showAlert("Bravo !!", "Vous avez atteint la cible");
@@ -149,6 +182,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     distance = myLoc.distanceTo(cibleLoc);
                     myMarker.setSnippet("à "+ Math.round(distance) + " m de la cible");
                     myMarker.showInfoWindow();
+                    messageAdversaire = monNom+" a atteint la cible "+numCible;
+                }
+                String reponse = requeteServeur.doGET("cmd=getParticipants");
+                String[] participants = reponse.split(",");
+                for (String nom : participants) {
+                    if (!nom.equals(monNom)) {
+                        requeteServeur.doGET("cmd=sendMessage&name="+nom+"&msg="+messageAdversaire);
+                    }
                 }
             }
         } catch (IOException e) {
@@ -281,5 +322,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void setCourseFinie(Boolean courseFinie) {
         this.courseFinie = courseFinie;
+    }
+
+    public TimerRace getTimerRace() {
+        return timerRace;
     }
 }

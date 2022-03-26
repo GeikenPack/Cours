@@ -53,12 +53,14 @@ public class RejoindreCourse extends Dialog{
 					System.out.println(tabGoalPos[0]);
 
 					//Actualisation du marqueur de cible
+					System.out.println(tabGoalPos[1]);
 					mainAct.getCibleTv().setText("Cible  : "+tabGoalPos[0]);
 					mainAct.getCibleLoc().setLatitude(Float.parseFloat(tabGoalPos[1]));
 					mainAct.getCibleLoc().setLongitude(Float.parseFloat(tabGoalPos[2]));
 					mainAct.getCibleMarker().setPosition(new LatLng(mainAct.getCibleLoc().getLatitude(), mainAct.getCibleLoc().getLongitude()));
 
 					mainAct.abonnementGPS();
+					mainAct.getTimerRace().start();
 					dismiss();
 				} catch (MalformedURLException e) {
 					mainAct.showAlert("Problème", "URL invalide");

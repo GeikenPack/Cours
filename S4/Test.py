@@ -1,0 +1,1 @@
+lignes = int(input())
