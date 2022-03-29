@@ -130,7 +130,7 @@ $('document').ready(function() {
     function animCarte(indJoueur) {
         $zoneJ = $('.joueur'+indJoueur)
         carte = blackBot.mainJoueurs[indJoueur].cartes[blackBot.mainJoueurs[indJoueur].cartes.length-1]
-        $('.pioche').append('<img class="newCarte" src="resources/Cartes/'+NomCarte[carte.hauteur]+'_'+CouleurCarte[carte.couleur]+'.png" width="100" height="180">')
+        $('.pioche').append('<img class="newCarte" src="resources/Cartes/'+style+'/'+NomCarte[carte.hauteur]+'_'+CouleurCarte[carte.couleur]+'.png" width="100" height="180">')
         //Move the new card to the current player's zone
         $('.newCarte').animate({'top': $zoneJ.offset().top, 'left': $zoneJ.offset().left}, 1000, function() {
             $('.newCarte').remove()
@@ -186,7 +186,7 @@ $('document').ready(function() {
          */
         $('.style').on('change', function() {
             style = $('.style').find(":selected").text();
-            $('.pioche').attr('src', 'resources/Cartes/'+style+'/Dos.png')
+            $('.imgPioche').attr('src', 'resources/Cartes/'+style+'/Dos.png')
         })
     }
 
