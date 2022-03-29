@@ -80,6 +80,9 @@ class Sabot {
         this.cartesTirees.forEach( carte => this.cartesSabot.push(carte) )
         this.cartesTirees.length = 0
         this.cartesSabot.sort( (a, b) => 0.5 - Math.random() )
+        if ($('.son').is(':checked')) {
+            let test = new Audio('resources/sounds/shuffle.mp3').play()
+        }
     }
     /**
      *  Tirage d'une carte (elle passe du sabot à l'historique des cartes tirée)

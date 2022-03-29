@@ -3,6 +3,7 @@ let blackBot = new BlackBot(nbJoueurs)
 let joueurActuel = -1
 let miseJoueurs = []
 let miseNouveJoueur = 0
+let style = "Basique"
 
 //Définition du croupier : Un nom, une zone pour les cartes et une zone pour le score
 const defCroupierHtml = '<h2 class="nomCroupier">Croupier</h2>' +
@@ -11,6 +12,19 @@ const defCroupierHtml = '<h2 class="nomCroupier">Croupier</h2>' +
 
 
 $('document').ready(function() {
+    $('.menuBut').click(function() {
+        $.each($('.menuCont').attr('class').split(' '), function(index, content) {
+            if (content === "close") {
+                $('.menuCont').removeClass('close')
+                $('.menuCont').addClass('open')
+                $('.menu').css('border-left', 'black solid 0px')
+            } else if (content === "open") {
+                $('.menuCont').removeClass('open')
+                $('.menuCont').addClass('close')
+                $('menu').css('border-left', '1px solid black')
+            }
+        })
+    })
     //On récupère les zones que l'on va utiliser
     const $zoneCroupier = $('.croupier')
     const $zoneJoueurs = $('#joueurs')
@@ -26,6 +40,8 @@ $('document').ready(function() {
         blackBot.distribuer()
         actualiserJoueurs()
         passageJeu()
+        $('.pioche').css('visibility','visible')
+        $('.textPioche').css('visibility','visible')
     })
 
     //Quand on recommence, on relance la partie, on actualise les joueurs pour enlever les cartes et on passe en mise
@@ -35,6 +51,8 @@ $('document').ready(function() {
         actualiserJoueurs()
         passageMise()
         $('.message').html("")
+        $('.pioche').css('visibility','hidden')
+        $('.textPioche').css('visibility','hidden')
     })
 
     /**
@@ -46,7 +64,7 @@ $('document').ready(function() {
         for (let i = 0; i < nbJoueurs; i++){
             //Chaques joueurs a une mise de base de 100
             //Définition d'un joueur
-            $zoneJoueurs.append('<div class="joueur">' +
+            $zoneJoueurs.append('<div class="joueur joueur'+i+'">' +
                                 '<h2 class="nomJoueur">Joueur '+i+'</h2>' +
                                 '<div class="cartes'+i+' cartes"></div>' +
                                 '<div class="score scoreJoueur'+i+'"></div>' +
@@ -59,7 +77,6 @@ $('document').ready(function() {
                                 '</div>' +
                                 '<div class="argent argent'+i+'"></div>' +
                                 '</div>')
-
             /**
              * Action de miser
              * Quand le joueur appuie sur miser, on récupère la valeur saisie dans le champs approprié et l'enleve de son argent
@@ -81,8 +98,12 @@ $('document').ready(function() {
              */
             $('.tirer'+i).attr('disabled', 'disabled').click(function() {
                 blackBot.tirer(i)
-                actualiserJoueurs()
+                animCarte(i)
+                setTimeout(actualiserJoueurs, 1000)
                 checkFinPartie()
+                if ($('.son').is(':checked')) {
+                    new Audio("resources/sounds/place.mp3").play()
+                }
             })
 
             /**
@@ -98,9 +119,22 @@ $('document').ready(function() {
 
         }
         //Zone de gestion des joueurs
-        console.log(miseNouveJoueur);
         miseJoueurs.push(miseNouveJoueur)
         ajoutGestionJoueurs()
+    }
+
+    /**
+     * 
+     * @param {int} indJoueur Indice du joueur qui tire une carte
+     */
+    function animCarte(indJoueur) {
+        $zoneJ = $('.joueur'+indJoueur)
+        carte = blackBot.mainJoueurs[indJoueur].cartes[blackBot.mainJoueurs[indJoueur].cartes.length-1]
+        $('.pioche').append('<img class="newCarte" src="resources/Cartes/'+NomCarte[carte.hauteur]+'_'+CouleurCarte[carte.couleur]+'.png" width="100" height="180">')
+        //Move the new card to the current player's zone
+        $('.newCarte').animate({'top': $zoneJ.offset().top, 'left': $zoneJ.offset().left}, 1000, function() {
+            $('.newCarte').remove()
+        })
     }
 
     /**
@@ -145,6 +179,15 @@ $('document').ready(function() {
             ajoutJoueurs()
             actualiserJoueurs()
         })
+
+        /**
+         * Action de changer le style
+         * Quand on choisis un élément de la liste déroulante, on change le style des cartes
+         */
+        $('.style').on('change', function() {
+            style = $('.style').find(":selected").text();
+            $('.pioche').attr('src', 'resources/Cartes/'+style+'/Dos.png')
+        })
     }
 
     /**
@@ -177,6 +220,7 @@ $('document').ready(function() {
             }
         }
         actualiserCartesBanque()
+        $('.textPioche').html("x"+blackBot.sabot.cartesSabot.length)
         $('.scoreCroupier').text("Score : " + blackBot.mainBanque.getScore())
         if (blackBot.etat === EtatBlackBot.GAIN) {
             $('.recommencer').removeAttr('disabled')
@@ -272,7 +316,7 @@ $('document').ready(function() {
         $('.cartes'+indJoueur).empty()
         for (let i = 0; i < blackBot.mainJoueurs[indJoueur].getNbCartes(); i++){
             let carteAct = blackBot.mainJoueurs[indJoueur].cartes[i]
-            $(".cartes"+indJoueur).append('<img src="resources/Cartes/' + NomCarte[carteAct.hauteur]+'_'+CouleurCarte[carteAct.couleur]+'.png" width="100" height="180"></img>')
+            $(".cartes"+indJoueur).append('<img src="resources/Cartes/'+style+ '/' + NomCarte[carteAct.hauteur]+'_'+CouleurCarte[carteAct.couleur]+'.png" width="100" height="180"></img>')
         }
     }
 
@@ -283,7 +327,8 @@ $('document').ready(function() {
         $(".carteBanque").empty()
         for (let i = 0; i < blackBot.mainBanque.getNbCartes(); i++){
             let carteAct = blackBot.mainBanque.cartes[i]
-            $(".carteBanque").append('<img src="resources/Cartes/' + NomCarte[carteAct.hauteur]+'_'+CouleurCarte[carteAct.couleur]+'.png" width="100" height="180"></img>')
+            $(".carteBanque").append('<img src="resources/Cartes/'+style+ "/" + NomCarte[carteAct.hauteur]+'_'+CouleurCarte[carteAct.couleur]+'.png" width="100" height="180"></img>')
         }
     }
 })
+
